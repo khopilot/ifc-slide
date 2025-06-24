@@ -1,0 +1,300 @@
+/* ===================================
+   TITLE SLIDE - DESIGN ÉLÉGANT
+   =================================== */
+
+.title-slide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--ifc-blue) 0%, var(--ifc-blue-light) 100%);
+  color: var(--white);
+  text-align: center;
+  padding: var(--space-2xl);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background decoration */
+.background-decoration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.decorative-shape {
+  position: absolute;
+  opacity: 0.1;
+  color: var(--white);
+}
+
+.decorative-shape-1 {
+  width: 300px;
+  height: 300px;
+  top: -150px;
+  right: -150px;
+}
+
+.decorative-shape-2 {
+  width: 400px;
+  height: 400px;
+  bottom: -200px;
+  left: -200px;
+}
+
+/* Title container */
+.title-container {
+  max-width: 1000px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2xl);
+  z-index: 1;
+}
+
+/* Logo */
+.logo-wrapper {
+  margin-bottom: var(--space-lg);
+}
+
+.slide-logo {
+  height: 100px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  opacity: 0.95;
+}
+
+/* Main title with word animation */
+.main-title {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 900;
+  margin: 0;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  position: relative;
+}
+
+.title-word {
+  display: inline-block;
+  position: relative;
+}
+
+.title-word::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.3);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.title-word:hover::after {
+  transform: scaleX(1);
+}
+
+/* Subtitle with decorative lines */
+.subtitle-wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  width: 100%;
+  max-width: 600px;
+}
+
+.subtitle-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.5), transparent);
+}
+
+.subtitle {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 300;
+  opacity: 0.95;
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* Presenter info card */
+.presenter-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-xl);
+  padding: var(--space-lg) var(--space-2xl);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  transition: all var(--transition-base);
+}
+
+.presenter-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.presenter-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 var(--space-xs) 0;
+}
+
+.organization {
+  font-size: 1.125rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+/* Date wrapper */
+.date-wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background: rgba(255, 255, 255, 0.1);
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(10px);
+}
+
+.date-icon {
+  font-size: 1.25rem;
+}
+
+.date {
+  font-size: 1.125rem;
+  margin: 0;
+  opacity: 0.95;
+}
+
+/* Bottom decoration line */
+.bottom-decoration {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.5) 20%, 
+    rgba(255, 255, 255, 0.8) 50%, 
+    rgba(255, 255, 255, 0.5) 80%, 
+    transparent 100%
+  );
+  transform-origin: center;
+}
+
+/* Particle effects */
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive adjustments */
+@media (min-width: 1400px) {
+  .main-title {
+    font-size: 5.5rem;
+  }
+  
+  .subtitle {
+    font-size: 2.5rem;
+  }
+  
+  .slide-logo {
+    height: 120px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .decorative-shape-1 {
+    width: 200px;
+    height: 200px;
+    top: -100px;
+    right: -100px;
+  }
+  
+  .decorative-shape-2 {
+    width: 300px;
+    height: 300px;
+    bottom: -150px;
+    left: -150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .title-slide {
+    padding: var(--space-lg);
+  }
+  
+  .main-title {
+    font-size: 2.5rem;
+  }
+  
+  .subtitle-wrapper {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+  
+  .subtitle-line {
+    display: none;
+  }
+  
+  .subtitle {
+    font-size: 1.25rem;
+    white-space: normal;
+  }
+  
+  .slide-logo {
+    height: 80px;
+  }
+  
+  .presenter-card {
+    padding: var(--space-md) var(--space-lg);
+  }
+  
+  .presenter-name {
+    font-size: 1.25rem;
+  }
+  
+  .organization {
+    font-size: 1rem;
+  }
+}
+
+/* Dark mode adjustments */
+.dark .title-slide {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+.dark .presenter-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark .date-wrapper {
+  background: rgba(255, 255, 255, 0.05);
+}

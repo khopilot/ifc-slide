@@ -1,0 +1,308 @@
+/* ===================================
+   APP COMPONENT STYLES
+   =================================== */
+
+/* Import base styles and variables */
+@import './index.css';
+
+/* ===================================
+   APP LAYOUT
+   =================================== */
+
+.app {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  overflow: hidden;
+  position: relative;
+}
+
+/* ===================================
+   HEADER & NAVIGATION
+   =================================== */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) var(--space-xl);
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  z-index: var(--z-sticky);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.logo-image {
+  height: 2.5rem;
+  width: auto;
+}
+
+.logo-text {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+/* Control Buttons */
+.control-btn {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  background-color: var(--bg-tertiary);
+  color: var(--text-secondary);
+  transition: all var(--transition-base);
+  font-size: 1.25rem;
+}
+
+.control-btn:hover:not(:disabled) {
+  background-color: var(--ifc-blue);
+  color: var(--white);
+  transform: scale(1.05);
+}
+
+.control-btn:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.control-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* Slide Counter */
+.slide-counter {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-tertiary);
+  padding: var(--space-xs) var(--space-md);
+  background-color: var(--bg-tertiary);
+  border-radius: var(--radius-full);
+  min-width: 4rem;
+  text-align: center;
+}
+
+/* Toolbar */
+.toolbar {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background: var(--bg-secondary);
+  padding: var(--space-sm);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  z-index: var(--z-fixed);
+}
+
+.toolbar-btn {
+  width: 2.25rem;
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  background-color: transparent;
+  color: var(--text-tertiary);
+  transition: all var(--transition-base);
+  font-size: 1.125rem;
+}
+
+.toolbar-btn:hover {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.toolbar-btn.active {
+  background-color: var(--ifc-blue);
+  color: var(--white);
+}
+
+/* ===================================
+   MAIN CONTENT
+   =================================== */
+
+.main-content {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swipeable-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===================================
+   SLIDE CONTAINER
+   =================================== */
+
+.slide-container {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.slide-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* ===================================
+   CONTROLS
+   =================================== */
+
+.controls {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  background: var(--bg-secondary);
+  padding: var(--space-md) var(--space-xl);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-xl);
+  z-index: var(--z-fixed);
+}
+
+/* ===================================
+   RESPONSIVE DESIGN
+   =================================== */
+
+@media (max-width: 768px) {
+  .header {
+    padding: var(--space-sm) var(--space-md);
+  }
+  
+  .logo-text {
+    display: none;
+  }
+  
+  .nav-controls {
+    gap: var(--space-md);
+  }
+  
+  .control-btn {
+    width: 2.25rem;
+    height: 2.25rem;
+    font-size: 1.125rem;
+  }
+  
+  .slide-counter {
+    font-size: 0.75rem;
+    min-width: 3.5rem;
+  }
+  
+  .toolbar-btn {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+  }
+  
+  .controls {
+    bottom: 1rem;
+    padding: var(--space-sm) var(--space-md);
+    gap: var(--space-md);
+  }
+}
+
+/* ===================================
+   PRESENTER NOTES
+   =================================== */
+
+.presenter-notes {
+  position: fixed;
+  bottom: 6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg-secondary);
+  padding: var(--space-lg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  max-width: 600px;
+  width: 90%;
+  z-index: var(--z-fixed);
+}
+
+.presenter-notes h3 {
+  margin: 0 0 var(--space-md) 0;
+  color: var(--text-primary);
+  font-size: 1.25rem;
+}
+
+.presenter-notes p {
+  margin: 0 0 var(--space-sm) 0;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ===================================
+   DARK MODE
+   =================================== */
+
+.app.dark {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.dark .controls {
+  background: var(--bg-secondary);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.dark .toolbar {
+  background: var(--bg-secondary);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* ===================================
+   PRINT STYLES
+   =================================== */
+
+@media print {
+  .header,
+  .controls,
+  .toolbar {
+    display: none;
+  }
+  
+  .slide {
+    page-break-after: always;
+    position: static;
+    height: 100vh;
+  }
+}

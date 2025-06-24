@@ -1,0 +1,251 @@
+/* ===================================
+   TOOL SHOWCASE V2 - ELEGANT LIGHT THEME
+   =================================== */
+
+.tool-showcase-v2 {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #bae6fd 100%);
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.showcase-layout {
+  max-width: 1200px;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+/* Left side - Info */
+.showcase-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.showcase-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.tool-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  background: white;
+  padding: 1rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(14, 165, 233, 0.15);
+  border: 1px solid rgba(14, 165, 233, 0.1);
+}
+
+.tool-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 0;
+  color: #075985;
+  line-height: 1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.tool-year-badge {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  background: rgba(14, 165, 233, 0.1);
+  color: #0284c7;
+  font-size: 0.875rem;
+  border-radius: 20px;
+  border: 1px solid rgba(14, 165, 233, 0.2);
+}
+
+.tool-description {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #0c4a6e;
+  margin: 0;
+}
+
+.tool-cta {
+  margin-top: 1rem;
+}
+
+.try-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.875rem 2rem;
+  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1.125rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 20px rgba(14, 165, 233, 0.3);
+}
+
+.try-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(14, 165, 233, 0.4);
+}
+
+/* Right side - Details */
+.showcase-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.detail-section {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(14, 165, 233, 0.1);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(14, 165, 233, 0.08);
+}
+
+.detail-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  color: #075985;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Features */
+.features-compact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.feature-pill {
+  padding: 0.5rem 1rem;
+  background: rgba(14, 165, 233, 0.08);
+  border: 1px solid rgba(14, 165, 233, 0.15);
+  border-radius: 20px;
+  font-size: 0.875rem;
+  color: #0369a1;
+}
+
+/* Use cases */
+.usecases-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.usecase-item {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.9375rem;
+  color: #0c4a6e;
+  line-height: 1.4;
+}
+
+.usecase-bullet {
+  color: #0ea5e9;
+  font-weight: bold;
+}
+
+/* Dark mode */
+.dark .tool-showcase-v2 {
+  background: linear-gradient(135deg, #0c4a6e 0%, #075985 50%, #0369a1 100%);
+}
+
+.dark .tool-logo {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.dark .tool-title {
+  color: #e0f2fe;
+}
+
+.dark .tool-year-badge {
+  background: rgba(255, 255, 255, 0.1);
+  color: #7dd3fc;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.dark .tool-description {
+  color: #bae6fd;
+}
+
+.dark .detail-section {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark .detail-title {
+  color: #e0f2fe;
+}
+
+.dark .feature-pill {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #7dd3fc;
+}
+
+.dark .usecase-item {
+  color: #bae6fd;
+}
+
+.dark .usecase-bullet {
+  color: #38bdf8;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .showcase-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .tool-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .tool-showcase-v2 {
+    padding: 1rem;
+  }
+  
+  .showcase-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .tool-logo {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .tool-title {
+    font-size: 2rem;
+  }
+  
+  .tool-description {
+    font-size: 1rem;
+  }
+  
+  .features-compact {
+    flex-direction: column;
+  }
+  
+  .feature-pill {
+    text-align: center;
+  }
+}

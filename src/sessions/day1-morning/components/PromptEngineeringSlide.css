@@ -1,0 +1,515 @@
+/* ===================================
+   PROMPT ENGINEERING SLIDE - DESIGN CLAIR ET ÉLÉGANT
+   =================================== */
+
+.prompt-engineering-slide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
+  padding: var(--space-md);
+  position: relative;
+  overflow: hidden;
+  color: var(--text-primary);
+}
+
+/* Animated AI grid background */
+.prompt-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.ai-grid {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 4px;
+  padding: var(--space-xl);
+}
+
+.grid-cell {
+  background: linear-gradient(135deg, var(--ifc-blue) 0%, transparent 100%);
+  border-radius: var(--radius-sm);
+  opacity: 0.1;
+}
+
+/* Main content */
+.prompt-content {
+  max-width: 1600px;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  gap: var(--space-md);
+  position: relative;
+  z-index: 1;
+}
+
+/* Header */
+.prompt-header {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+}
+
+.prompt-icon {
+  width: 50px;
+  height: 50px;
+  background: var(--ifc-blue);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 92, 169, 0.2);
+}
+
+.prompt-icon span {
+  font-size: 1.5rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.prompt-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0;
+  color: var(--ifc-blue);
+  letter-spacing: -0.02em;
+}
+
+/* Section titles */
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--ifc-blue);
+  margin: 0 0 var(--space-sm) 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.section-icon {
+  font-size: 1.5rem;
+}
+
+/* Definition section */
+.definition-section {
+  margin: 0;
+}
+
+.definition-card {
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.definition-header {
+  display: none;
+}
+
+.definition-text {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Best practices */
+.best-practices-section {
+  margin: 0;
+}
+
+.practices-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-sm);
+}
+
+.practice-card {
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-xs);
+  transition: all var(--transition-base);
+  cursor: pointer;
+}
+
+.practice-card:hover {
+  border-color: var(--ifc-blue);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 92, 169, 0.15);
+}
+
+.practice-number {
+  width: 24px;
+  height: 24px;
+  background: var(--ifc-blue);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.practice-text {
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Examples section */
+.examples-section {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.example-tabs {
+  display: flex;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-sm);
+  border-bottom: 2px solid var(--border-light);
+}
+
+.example-tab {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  padding: var(--space-xs) var(--space-sm);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  transition: all var(--transition-base);
+}
+
+.example-tab:hover {
+  color: var(--ifc-blue);
+}
+
+.example-tab.active {
+  color: var(--ifc-blue);
+}
+
+.example-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--ifc-blue);
+}
+
+.example-content {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+}
+
+.example-card {
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.example-header {
+  background: var(--bg-secondary);
+  padding: var(--space-xs) var(--space-sm);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.example-header h4 {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.copy-button {
+  background: var(--ifc-blue);
+  color: var(--white);
+  border: none;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.copy-button:hover {
+  background: var(--ifc-blue-light);
+}
+
+.copy-button.copied {
+  background: var(--success);
+}
+
+.example-text-wrapper {
+  flex: 1;
+  padding: var(--space-sm);
+  overflow: auto;
+  background: #f8f9fa;
+}
+
+.example-text {
+  font-family: 'Monaco', 'Consolas', monospace;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--text-primary);
+  white-space: pre-wrap;
+  margin: 0;
+}
+
+/* Exercise section */
+.exercise-section {
+  margin: 0;
+}
+
+.exercise-card {
+  background: linear-gradient(135deg, rgba(0, 92, 169, 0.05) 0%, rgba(0, 92, 169, 0.02) 100%);
+  border: 2px solid var(--ifc-blue);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  position: relative;
+}
+
+.exercise-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-sm);
+}
+
+.hint-button {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  padding: 2px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.hint-button:hover {
+  background: var(--bg-tertiary);
+  border-color: var(--ifc-blue);
+}
+
+.exercise-text {
+  font-size: 1rem;
+  line-height: 1.4;
+  color: var(--text-secondary);
+  margin: 0 0 var(--space-sm) 0;
+}
+
+.exercise-hint {
+  background: rgba(255, 207, 102, 0.1);
+  border: 1px solid rgba(255, 207, 102, 0.3);
+  border-radius: var(--radius-sm);
+  padding: var(--space-sm);
+  margin-bottom: var(--space-sm);
+  overflow: hidden;
+}
+
+.hint-text {
+  color: var(--text-primary);
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+.exercise-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.try-button {
+  background: var(--ifc-blue);
+  color: var(--white);
+  border: none;
+  padding: var(--space-xs) var(--space-lg);
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.try-button:hover {
+  background: var(--ifc-blue-light);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 92, 169, 0.2);
+}
+
+/* Prompt builder */
+.prompt-builder {
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.builder-sections {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.builder-section label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--ifc-blue);
+  margin-bottom: var(--space-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.builder-input {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: var(--space-sm);
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-style: italic;
+}
+
+.builder-formula {
+  margin-top: var(--space-md);
+  padding: var(--space-sm);
+  background: linear-gradient(135deg, rgba(0, 92, 169, 0.05) 0%, rgba(0, 92, 169, 0.02) 100%);
+  border-radius: var(--radius-sm);
+  text-align: center;
+}
+
+.formula-text {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 0.875rem;
+}
+
+.builder-tips {
+  margin-top: var(--space-sm);
+  display: flex;
+  justify-content: center;
+}
+
+.tip-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-md);
+  background: rgba(255, 207, 102, 0.1);
+  border: 1px solid rgba(255, 207, 102, 0.3);
+  border-radius: var(--radius-full);
+}
+
+.tip-icon {
+  font-size: 1rem;
+}
+
+.tip-text {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+/* Decorative elements */
+.prompt-decorations {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  pointer-events: none;
+}
+
+.decoration-ai {
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle, var(--ifc-blue) 0%, transparent 70%);
+  border-radius: 50%;
+  opacity: 0.1;
+}
+
+/* Dark mode adjustments */
+.dark .prompt-engineering-slide {
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+}
+
+.dark .definition-card,
+.dark .practice-card,
+.dark .example-card,
+.dark .prompt-builder {
+  background: var(--bg-secondary);
+  border-color: var(--border);
+}
+
+.dark .example-text-wrapper {
+  background: var(--bg-tertiary);
+}
+
+.dark .hint-button {
+  background: var(--bg-tertiary);
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+  .practices-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .builder-sections {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .prompt-engineering-slide {
+    padding: var(--space-sm);
+  }
+  
+  .prompt-title {
+    font-size: 1.75rem;
+  }
+  
+  .section-title {
+    font-size: 1.125rem;
+  }
+  
+  .example-tabs {
+    flex-wrap: wrap;
+  }
+}

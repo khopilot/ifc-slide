@@ -1,0 +1,73 @@
+/* ===================================
+   SLIDE RENDERER STYLES
+   =================================== */
+
+.slide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2xl);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Slide transitions */
+.slide-enter {
+  animation: slideInUp var(--transition-slow) ease-out;
+}
+
+.slide-exit {
+  animation: fadeOut var(--transition-slow) ease-out;
+}
+
+/* Missing slide fallback */
+.missing-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.missing-slide-icon {
+  font-size: 3rem;
+  opacity: 0.5;
+}
+
+.missing-slide-text {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.missing-slide-type {
+  font-size: 1rem;
+  color: var(--text-tertiary);
+  font-family: monospace;
+  background: var(--bg-secondary);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-md);
+}
+
+/* Animations */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}

@@ -1,0 +1,191 @@
+/* ===================================
+   TOOL CATEGORY SLIDE V2 - MINIMALIST GRID
+   =================================== */
+
+.tool-category-slide-v2 {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #fafbfc 0%, #f3f4f6 100%);
+  padding: 2rem;
+  overflow: hidden;
+}
+
+/* Container */
+.category-container {
+  max-width: 1200px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Header */
+.category-header-v2 {
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.category-icon-v2 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.category-title-v2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  color: #1f2937;
+}
+
+.category-desc-v2 {
+  font-size: 1.125rem;
+  color: #6b7280;
+  margin: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Tools Grid */
+.tools-grid-v2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  flex: 1;
+  align-content: center;
+}
+
+.tool-card-v2 {
+  background: white;
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tool-card-v2:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-color: #d1d5db;
+}
+
+.tool-header-v2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 0.5rem;
+}
+
+.tool-name-v2 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0;
+  color: #1f2937;
+}
+
+.tool-company-v2 {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  background: #f3f4f6;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.tool-desc-v2 {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Footer */
+.category-footer-v2 {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  padding: 1rem 0;
+  border-top: 1px solid #e5e7eb;
+}
+
+.stat-v2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.stat-num {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #3b82f6;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* Dark mode */
+.dark .tool-category-slide-v2 {
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+}
+
+.dark .category-title-v2 {
+  color: white;
+}
+
+.dark .category-desc-v2 {
+  color: #9ca3af;
+}
+
+.dark .tool-card-v2 {
+  background: #374151;
+  border-color: #4b5563;
+}
+
+.dark .tool-name-v2 {
+  color: white;
+}
+
+.dark .tool-company-v2 {
+  background: #1f2937;
+  color: #9ca3af;
+}
+
+.dark .tool-desc-v2 {
+  color: #d1d5db;
+}
+
+.dark .category-footer-v2 {
+  border-color: #374151;
+}
+
+.dark .stat-label {
+  color: #9ca3af;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .tools-grid-v2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .category-title-v2 {
+    font-size: 2rem;
+  }
+  
+  .tools-grid-v2 {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  
+  .category-footer-v2 {
+    gap: 2rem;
+  }
+}
