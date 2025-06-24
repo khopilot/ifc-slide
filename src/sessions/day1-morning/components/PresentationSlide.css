@@ -6,12 +6,13 @@
   width: 100%;
   height: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   background: linear-gradient(135deg, var(--bg-primary) 0%, #f8f9fa 100%);
-  padding: var(--space-2xl);
+  padding: 1.5rem;
   position: relative;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 /* Animated background */
@@ -34,22 +35,24 @@
 .presentation-content {
   max-width: 1200px;
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
-  gap: var(--space-2xl);
+  gap: 1.5rem;
   position: relative;
   z-index: 1;
+  padding-bottom: 2rem;
 }
 
 /* Header section */
 .presentation-header {
   text-align: center;
-  margin-bottom: var(--space-xl);
+  margin-bottom: 1.5rem;
+  flex-shrink: 0;
 }
 
 .presentation-title {
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-size: clamp(2rem, 3vw, 2.5rem);
   font-weight: 800;
   color: var(--text-primary);
   margin: 0;
@@ -83,7 +86,8 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: var(--space-xl);
+  gap: 1.5rem;
+  min-height: 0;
 }
 
 .content-card {
@@ -107,42 +111,42 @@
 }
 
 .objectives-header {
-  margin-bottom: var(--space-lg);
+  margin-bottom: 0.75rem;
 }
 
 .objectives-title {
-  font-size: 1.75rem;
+  font-size: 1.25rem;
   font-weight: 600;
   color: var(--ifc-blue);
   margin: 0;
   display: flex;
   align-items: center;
-  gap: var(--space-sm);
+  gap: 0.5rem;
 }
 
 .objectives-icon {
-  font-size: 2rem;
+  font-size: 1.25rem;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
 .objectives-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--space-lg);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 0.75rem;
 }
 
 .objective-card {
   background: var(--bg-secondary);
   border: 2px solid var(--border-light);
   border-radius: var(--radius-lg);
-  padding: var(--space-lg);
+  padding: 0.75rem;
   position: relative;
   overflow: hidden;
   transition: all var(--transition-base);
   cursor: pointer;
   display: flex;
   align-items: flex-start;
-  gap: var(--space-md);
+  gap: 0.75rem;
 }
 
 .objective-card:hover {
@@ -156,8 +160,8 @@
 }
 
 .objective-number {
-  width: 40px;
-  height: 40px;
+  width: 28px;
+  height: 28px;
   background: var(--ifc-blue);
   color: var(--white);
   border-radius: 50%;
@@ -165,7 +169,7 @@
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 1.125rem;
+  font-size: 0.875rem;
   flex-shrink: 0;
 }
 
@@ -175,8 +179,8 @@
 
 .objective-content p {
   margin: 0;
-  font-size: 1.125rem;
-  line-height: 1.6;
+  font-size: 0.875rem;
+  line-height: 1.4;
   color: var(--text-secondary);
 }
 
@@ -235,14 +239,14 @@
 /* Content sections */
 .content-sections {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: var(--space-xl);
-  margin-top: var(--space-xl);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
 .section-card {
   background: var(--bg-secondary);
-  padding: var(--space-xl);
+  padding: 1rem;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-light);
   transition: all var(--transition-base);
@@ -268,10 +272,13 @@
 }
 
 .section-title {
-  font-size: 1.5rem;
+  font-size: 1.125rem;
   font-weight: 600;
   color: var(--ifc-blue);
-  margin: 0 0 var(--space-md) 0;
+  margin: 0 0 0.75rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .section-points {
@@ -280,14 +287,14 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: 0.5rem;
 }
 
 .section-points li {
-  font-size: 1.125rem;
-  line-height: 1.6;
+  font-size: 0.875rem;
+  line-height: 1.4;
   color: var(--text-secondary);
-  padding-left: var(--space-lg);
+  padding-left: 1.5rem;
   position: relative;
 }
 
@@ -363,38 +370,46 @@
 
 @media (max-width: 768px) {
   .presentation-slide {
-    padding: var(--space-lg);
+    padding: 1rem;
   }
   
   .presentation-title {
-    font-size: 2rem;
-  }
-  
-  .presentation-subtitle {
-    font-size: 1.25rem;
-  }
-  
-  .objectives-title {
     font-size: 1.5rem;
   }
   
+  .presentation-subtitle {
+    font-size: 1rem;
+  }
+  
+  .objectives-title {
+    font-size: 1.125rem;
+  }
+  
   .objective-card {
-    padding: var(--space-md);
+    padding: 0.5rem;
   }
   
   .objective-number {
-    width: 32px;
-    height: 32px;
-    font-size: 1rem;
+    width: 24px;
+    height: 24px;
+    font-size: 0.75rem;
   }
   
   .objective-content p,
   .bullet-text,
   .section-points li {
-    font-size: 1rem;
+    font-size: 0.8125rem;
   }
   
   .section-title {
-    font-size: 1.25rem;
+    font-size: 1rem;
+  }
+  
+  .section-card {
+    padding: 0.75rem;
+  }
+  
+  .content-sections {
+    gap: 0.75rem;
   }
 }

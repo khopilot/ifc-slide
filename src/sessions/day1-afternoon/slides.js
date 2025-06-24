@@ -323,16 +323,16 @@ export const afternoonSlides = [
 
   // 12. Pause
   {
-    id: 21,
+    id: 12,
     type: 'afternoon-break',
     component: AfternoonBreakSlide,
     title: 'Pause',
     duration: '15 min'
   },
 
-  // 12. Catégorie: Recherche & Analyse
+  // 13. Catégorie: Recherche & Analyse
   {
-    id: 21,
+    id: 13,
     type: 'tool-category',
     component: ToolCategorySlide,
     title: 'Recherche & Analyse',
@@ -356,9 +356,9 @@ export const afternoonSlides = [
     duration: '1 min'
   },
 
-  // 13. Perplexity AI
+  // 14. Perplexity AI
   {
-    id: 21,
+    id: 14,
     type: 'tool-showcase',
     component: ToolShowcaseSlide,
     title: 'Perplexity AI',
@@ -386,9 +386,9 @@ export const afternoonSlides = [
     duration: '3 min'
   },
 
-  // 14. NotebookLM
+  // 15. NotebookLM
   {
-    id: 21,
+    id: 15,
     type: 'tool-showcase',
     component: ToolShowcaseSlide,
     title: 'NotebookLM',
@@ -416,9 +416,9 @@ export const afternoonSlides = [
     duration: '3 min'
   },
 
-  // 15. Catégorie: Productivité & Spécialisés
+  // 16. Catégorie: Productivité & Spécialisés
   {
-    id: 21,
+    id: 16,
     type: 'tool-category',
     component: ToolCategorySlide,
     title: 'Productivité & Outils Spécialisés',
@@ -452,9 +452,9 @@ export const afternoonSlides = [
     duration: '1 min'
   },
 
-  // 16. Gamma
+  // 17. Gamma
   {
-    id: 21,
+    id: 17,
     type: 'tool-showcase',
     component: ToolShowcaseSlide,
     title: 'Gamma',
@@ -482,9 +482,9 @@ export const afternoonSlides = [
     duration: '3 min'
   },
 
-  // 17. Mistral AI
+  // 18. Mistral AI
   {
-    id: 21,
+    id: 18,
     type: 'tool-showcase',
     component: ToolShowcaseSlide,
     title: 'Mistral AI',
@@ -512,9 +512,9 @@ export const afternoonSlides = [
     duration: '3 min'
   },
 
-  // 18. Grok 2
+  // 19. Grok 2
   {
-    id: 21,
+    id: 19,
     type: 'tool-showcase',
     component: ToolShowcaseSlide,
     title: 'Grok 2',
@@ -542,9 +542,9 @@ export const afternoonSlides = [
     duration: '3 min'
   },
 
-  // 19. Récapitulatif et bonnes pratiques
+  // 20. Récapitulatif et bonnes pratiques
   {
-    id: 21,
+    id: 20,
     type: 'presentation',
     component: PresentationSlide,
     title: 'Bonnes Pratiques',
