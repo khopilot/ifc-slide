@@ -94,6 +94,47 @@ export const day2MorningSlides = [
     notes: 'Faire un tour rapide pour voir si des questions sont restées en suspens'
   },
 
+  // Re-explication des concepts clés
+  {
+    id: 'day2-concept-clarification',
+    type: 'concept-clarification',
+    title: 'Re-explication : Outils · Prompts · Agents',
+    subtitle: 'Clarifier des concepts clés avant les ateliers',
+    time: '09h15 - 09h30',
+    content: {
+      objective: 'S\'assurer que tout le monde comprend bien les termes essentiels avant de passer aux workflows',
+      concepts: [
+        {
+          term: 'Outil IA',
+          definition: 'Application unique répondant à un besoin précis (chat, image, traduction).',
+          example: 'ChatGPT rédige un e-mail ; DALL·E crée un visuel.',
+          metaphor: 'Tournevis'
+        },
+        {
+          term: 'Prompt',
+          definition: 'Texte d\'instruction qu\'on envoie à l\'IA. Plus il est clair, meilleure est la réponse.',
+          example: '« Résumé ce texte en khmer de 100 mots. »',
+          metaphor: 'Instructions "visser ceci"'
+        },
+        {
+          term: 'Agent',
+          definition: 'IA qui enchaîne plusieurs actions via prompts successifs, guidée par l\'humain.',
+          example: 'Perplexity → ChatGPT → Canva dans nos scénarios.',
+          metaphor: 'Ouvrier'
+        },
+        {
+          term: 'Agent autonome',
+          definition: 'IA qui décide elle-même des étapes, appelle des outils, vérifie le résultat.',
+          example: 'Manus génère un site complet à partir d\'un brief.',
+          metaphor: 'Chef de chantier qui planifie et fait tout seul'
+        }
+      ],
+      summary: 'Outil = tournevis ; Prompt = instructions « visser ceci » ; Agent = ouvrier ; Agent autonome = chef de chantier'
+    },
+    duration: '15 min',
+    notes: 'Utiliser des exemples très concrets et vérifier la compréhension avec des questions simples'
+  },
+
   // Introduction aux workflows
   {
     id: 'day2-workflow-intro',

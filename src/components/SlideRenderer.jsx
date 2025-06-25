@@ -20,6 +20,7 @@ import ToolLinksSlide from '../sessions/day1-afternoon/components/ToolLinksSlide
 import WorkflowSlide from '../sessions/day2-morning/components/WorkflowSlide';
 import RecapSlide from '../sessions/day2-morning/components/RecapSlide';
 import WorkshopSlide from '../sessions/day2-morning/components/WorkshopSlide';
+import ConceptClarificationSlide from '../sessions/day2-morning/components/ConceptClarificationSlide';
 
 const slideComponents = {
   title: TitleSlide,
@@ -38,6 +39,7 @@ const slideComponents = {
   'workflow-intro': WorkflowSlide,
   'workflow-detail': WorkflowSlide,
   'recap-slide': RecapSlide,
+  'concept-clarification': ConceptClarificationSlide,
   'practical-workshop': WorkshopSlide,
   'group-presentations': WorkshopSlide,
   'conclusion': WorkshopSlide,
