@@ -9,8 +9,8 @@ const ProgressBar = ({ current, total }) => {
     <div className="progress-bar-container">
       <motion.div
         className="progress-bar"
-        initial={{ width: 0 }}
-        animate={{ width: `${progress}%` }}
+        initial={{ height: 0 }}
+        animate={{ height: `${progress}%` }}
         transition={{ duration: 0.3 }}
       />
     </div>

@@ -1,0 +1,341 @@
+/* ===================================
+   TEAM FORMATION SLIDE
+   =================================== */
+
+.team-formation-slide {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ddd6fe 0%, #c084fc 50%, #a855f7 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background Animation */
+.slide-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.floating-shape {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  animation: float-shape 20s ease-in-out infinite;
+}
+
+.shape-1 {
+  width: 300px;
+  height: 300px;
+  top: -150px;
+  left: -150px;
+  animation-delay: 0s;
+}
+
+.shape-2 {
+  width: 200px;
+  height: 200px;
+  bottom: -100px;
+  right: -100px;
+  animation-delay: 7s;
+}
+
+.shape-3 {
+  width: 150px;
+  height: 150px;
+  top: 50%;
+  left: 80%;
+  animation-delay: 14s;
+}
+
+@keyframes float-shape {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(100px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-50px, 100px) scale(0.9);
+  }
+}
+
+/* Content Container */
+.slide-content {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 2rem;
+  padding: 2.5rem;
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.15),
+    0 0 100px rgba(168, 85, 247, 0.3);
+  max-width: 1100px;
+  width: 90%;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Header */
+.slide-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.slide-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #6b21a8;
+  margin: 0 0 0.5rem 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.slide-subtitle {
+  font-size: 1.25rem;
+  color: #7c3aed;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Section Title */
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #4c1d95;
+  text-align: center;
+  margin: 0 0 2rem 0;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #a855f7, transparent);
+}
+
+/* Instructions Grid */
+.instructions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.instruction-card {
+  background: white;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.instruction-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #a855f7, #c084fc);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.instruction-card:hover {
+  border-color: #a855f7;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(168, 85, 247, 0.2);
+}
+
+.instruction-card:hover::before {
+  transform: scaleX(1);
+}
+
+.instruction-number {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: linear-gradient(135deg, #a855f7, #7c3aed);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3);
+}
+
+.instruction-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.instruction-content h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #4c1d95;
+  margin: 0 0 0.5rem 0;
+}
+
+.instruction-content p {
+  font-size: 0.9375rem;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Project Examples */
+.project-examples {
+  background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.examples-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #6b21a8;
+  margin: 0 0 1.5rem 0;
+  text-align: center;
+}
+
+.examples-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.example-item {
+  background: white;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  font-size: 0.9375rem;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.example-item:hover {
+  background: #f9fafb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.example-bullet {
+  color: #a855f7;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+/* Time Indicator */
+.time-indicator {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: rgba(168, 85, 247, 0.1);
+  padding: 0.5rem 1.25rem;
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.time-icon {
+  font-size: 1.25rem;
+}
+
+.time-text {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #6b21a8;
+}
+
+/* Call to Action */
+.call-to-action {
+  background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(168, 85, 247, 0.3);
+}
+
+.cta-text {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Scrollbar */
+.slide-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.slide-content::-webkit-scrollbar-track {
+  background: #e9d5ff;
+  border-radius: 4px;
+}
+
+.slide-content::-webkit-scrollbar-thumb {
+  background: #a855f7;
+  border-radius: 4px;
+}
+
+.slide-content::-webkit-scrollbar-thumb:hover {
+  background: #7c3aed;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .slide-content {
+    padding: 1.5rem;
+    max-height: 90vh;
+  }
+  
+  .slide-title {
+    font-size: 2rem;
+  }
+  
+  .slide-subtitle {
+    font-size: 1rem;
+  }
+  
+  .instructions-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .examples-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .time-indicator {
+    position: static;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+}

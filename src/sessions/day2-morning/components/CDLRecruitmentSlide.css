@@ -1,0 +1,815 @@
+/* ===================================
+   CDL RECRUITMENT SLIDE
+   =================================== */
+
+/* Global box-sizing for all elements */
+.cdl-recruitment-slide * {
+  box-sizing: border-box;
+}
+
+.cdl-recruitment-slide {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 50%, #fef3c7 100%);
+  padding: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Header - Reuse from Legal Workflow */
+.cdl-recruitment-slide .slide-header {
+  margin: 1.5rem 1.5rem 1.5rem 1.5rem;
+}
+
+.cdl-recruitment-slide .slide-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0 0 1rem 0;
+  text-align: center;
+}
+
+/* Tab Navigation - Similar to Legal Workflow */
+.cdl-recruitment-slide .tab-navigation {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  background: white;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.cdl-recruitment-slide .tab-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: transparent;
+  border: 2px solid transparent;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.cdl-recruitment-slide .tab-button:hover {
+  background: #fef3c7;
+  transform: translateY(-1px);
+}
+
+.cdl-recruitment-slide .tab-button.active {
+  background: #f59e0b;
+  color: white;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+}
+
+/* Content Container */
+.cdl-recruitment-slide .slide-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Overview Tab */
+.cdl-overview {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.cdl-overview .overview-header {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.cdl-overview .workflow-icon {
+  font-size: 4rem;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.cdl-overview .workflow-info h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 0.75rem 0;
+}
+
+.cdl-overview .workflow-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+}
+
+.cdl-overview .workflow-objective {
+  background: linear-gradient(135deg, #fed7aa 0%, #fdba74 100%);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border-left: 4px solid #f59e0b;
+}
+
+.cdl-overview .workflow-objective h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #92400e;
+  margin: 0 0 0.75rem 0;
+}
+
+.cdl-overview .workflow-objective p {
+  font-size: 1.0625rem;
+  color: var(--text-primary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Time Comparison Table */
+.time-comparison {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.time-comparison h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 1rem 0;
+  text-align: center;
+}
+
+.comparison-table {
+  overflow-x: auto;
+}
+
+.comparison-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.comparison-table th {
+  background: #f59e0b;
+  color: white;
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.comparison-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--border-light);
+  font-size: 0.875rem;
+}
+
+.comparison-table tr:hover {
+  background: #fef3c7;
+}
+
+.time-ai {
+  color: #059669;
+  font-weight: 600;
+}
+
+.time-gain {
+  color: #f59e0b;
+  font-weight: 700;
+  background: rgba(245, 158, 11, 0.1);
+}
+
+.total-row {
+  background: #fef3c7;
+  font-weight: 700;
+}
+
+/* Key Benefits */
+.key-benefits {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.key-benefits h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 1rem 0;
+  text-align: center;
+}
+
+.key-benefits .benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.key-benefits .benefit-card {
+  background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%);
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.key-benefits .benefit-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(245, 158, 11, 0.2);
+}
+
+/* Steps Tab */
+.cdl-steps {
+  padding: 1rem 0;
+}
+
+.cdl-steps .steps-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: center;
+  margin: 0 0 2rem 0;
+}
+
+.steps-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.step-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid #f59e0b;
+  transition: all 0.3s ease;
+}
+
+.step-card:hover {
+  transform: translateX(5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.step-header {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.step-number {
+  width: 3rem;
+  height: 3rem;
+  background: #f59e0b;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.step-info h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.step-duration {
+  background: rgba(245, 158, 11, 0.1);
+  color: #92400e;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.step-objective {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.step-prompt,
+.step-prompts,
+.step-output,
+.step-attention {
+  margin-bottom: 1rem;
+}
+
+.prompt-label,
+.prompts-label,
+.output-label,
+.attention-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.prompt-label,
+.prompts-label {
+  color: #8b5cf6;
+}
+
+.output-label {
+  color: #059669;
+}
+
+.attention-label {
+  color: #dc2626;
+}
+
+.step-prompt code,
+.step-prompts code {
+  font-family: 'Monaco', 'Consolas', monospace;
+  font-size: 0.875rem;
+  background: #f3f4f6;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  display: block;
+  white-space: pre-wrap;
+  border-left: 3px solid #8b5cf6;
+}
+
+.step-prompts ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.step-prompts li {
+  margin-bottom: 0.5rem;
+}
+
+.step-exercises {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.exercise-item {
+  background: #fef3c7;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.exercise-item h4 {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #92400e;
+  margin: 0 0 0.5rem 0;
+}
+
+.exercise-item p {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.step-tool {
+  display: inline-block;
+}
+
+.tool-badge {
+  background: linear-gradient(135deg, #10b981 0%, #14b8a6 100%);
+  color: white;
+  padding: 0.375rem 1rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.3);
+}
+
+/* Templates Tab */
+.cdl-templates {
+  padding: 1rem 0;
+}
+
+.templates-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: center;
+  margin: 0 0 2rem 0;
+}
+
+.template-section {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.template-section h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 1rem 0;
+}
+
+.evaluation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.grid-category {
+  background: #fef3c7;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  border: 2px solid #fed7aa;
+}
+
+.grid-category h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #92400e;
+  margin: 0 0 0.75rem 0;
+}
+
+.grid-category ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.grid-category li {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+.interview-questions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.question-category {
+  background: #f3f4f6;
+  padding: 1rem;
+  border-radius: 0.75rem;
+}
+
+.question-category h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 0.75rem 0;
+}
+
+.question-category ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.question-category li {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.question-category li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #f59e0b;
+  font-weight: bold;
+}
+
+.email-template {
+  margin-top: 1.5rem;
+}
+
+.email-template h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 0.75rem 0;
+}
+
+.template-box {
+  background: #f9fafb;
+  border: 2px dashed #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.template-box p {
+  margin: 0 0 0.75rem 0;
+}
+
+.template-box p:last-child {
+  margin: 0;
+}
+
+/* Automations Tab */
+.cdl-automations {
+  padding: 1rem 0;
+}
+
+.automations-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: center;
+  margin: 0 0 2rem 0;
+}
+
+.automation-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.automation-card h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 1rem 0;
+}
+
+.code-block {
+  background: #1e293b;
+  color: #e2e8f0;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  overflow-x: auto;
+}
+
+.code-label {
+  display: block;
+  font-size: 0.875rem;
+  color: #94a3b8;
+  margin-bottom: 0.75rem;
+}
+
+.code-block code {
+  font-family: 'Monaco', 'Consolas', monospace;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.comm-scenarios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.scenario {
+  background: #f3f4f6;
+  padding: 1rem;
+  border-radius: 0.75rem;
+}
+
+.scenario h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.75rem 0;
+}
+
+.scenario ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.scenario li {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.scenario li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #f59e0b;
+  font-weight: bold;
+}
+
+.vigilance-section {
+  margin-top: 2rem;
+}
+
+.vigilance-section h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #dc2626;
+  margin: 0 0 1rem 0;
+  text-align: center;
+}
+
+.vigilance-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.vigilance-card {
+  background: #fef2f2;
+  border: 2px solid #fee2e2;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  border-left: 4px solid #dc2626;
+}
+
+.vigilance-card h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #991b1b;
+  margin: 0 0 0.75rem 0;
+}
+
+.vigilance-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.vigilance-card li {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.vigilance-card li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #dc2626;
+}
+
+/* Checklist Tab */
+.cdl-checklist {
+  padding: 1rem 0;
+}
+
+.checklist-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: center;
+  margin: 0 0 2rem 0;
+}
+
+.checklist-phases {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.phase-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-top: 4px solid #f59e0b;
+}
+
+.phase-card h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 1rem 0;
+}
+
+.checklist-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.checklist-items li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.checklist-items input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #f59e0b;
+}
+
+.checklist-items label {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.final-note {
+  background: linear-gradient(135deg, #fed7aa 0%, #fdba74 100%);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.final-note p {
+  font-size: 1rem;
+  color: var(--text-primary);
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Scrollbar */
+.cdl-recruitment-slide .slide-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.cdl-recruitment-slide .slide-content::-webkit-scrollbar-track {
+  background: #fed7aa;
+  border-radius: 3px;
+}
+
+.cdl-recruitment-slide .slide-content::-webkit-scrollbar-thumb {
+  background: #f59e0b;
+  border-radius: 3px;
+}
+
+.cdl-recruitment-slide .slide-content::-webkit-scrollbar-thumb:hover {
+  background: #d97706;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .evaluation-grid,
+  .comm-scenarios,
+  .vigilance-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .overview-header {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .cdl-recruitment-slide {
+    padding: 1rem;
+  }
+  
+  .cdl-recruitment-slide .slide-title {
+    font-size: 1.5rem;
+  }
+  
+  .cdl-recruitment-slide .tab-navigation {
+    gap: 0.25rem;
+  }
+  
+  .cdl-recruitment-slide .tab-button {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
+  }
+  
+  .checklist-phases {
+    grid-template-columns: 1fr;
+  }
+  
+  .step-card {
+    padding: 1rem;
+  }
+  
+  .step-header {
+    flex-direction: column;
+    text-align: center;
+  }
+}

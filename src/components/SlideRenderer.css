@@ -14,6 +14,18 @@
   left: 0;
 }
 
+/* Special styling for workflow slides that need full width */
+.slide-full-width {
+  padding: 0 !important;
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+.slide-full-width > * {
+  width: 100%;
+  height: 100%;
+}
+
 /* Slide transitions */
 .slide-enter {
   animation: slideInUp var(--transition-slow) ease-out;

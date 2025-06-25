@@ -26,6 +26,18 @@ const ConceptClarificationSlide = ({ slide }) => {
     }
   };
 
+  const conceptVariants = {
+    hidden: { scale: 0.9, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
     <div className="concept-clarification-slide">
       <motion.div
@@ -39,43 +51,61 @@ const ConceptClarificationSlide = ({ slide }) => {
           {slide.subtitle && <p className="concept-subtitle">{slide.subtitle}</p>}
         </motion.div>
 
-        <motion.div className="concept-body" variants={itemVariants}>
-          {slide.content && (
-            <div className="concept-main">
-              {slide.content.definition && (
-                <div className="definition-section">
-                  <h3>🎯 Définition</h3>
-                  <p>{slide.content.definition}</p>
-                </div>
-              )}
+        {slide.content && (
+          <motion.div className="concept-body" variants={itemVariants}>
+            {/* Objective section */}
+            {slide.content.objective && (
+              <motion.div className="objective-section" variants={itemVariants}>
+                <h3>🎯 Objectif</h3>
+                <p>{slide.content.objective}</p>
+              </motion.div>
+            )}
 
-              {slide.content.key_points && (
-                <div className="key-points-section">
-                  <h3>📋 Points Clés</h3>
-                  <ul className="key-points-list">
-                    {slide.content.key_points.map((point, index) => (
-                      <li key={index}>{point}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-              {slide.content.examples && (
-                <div className="examples-section">
-                  <h3>💡 Exemples</h3>
-                  <div className="examples-grid">
-                    {slide.content.examples.map((example, index) => (
-                      <div key={index} className="example-card">
-                        <h4>{example.title}</h4>
-                        <p>{example.description}</p>
+            {/* Concepts grid */}
+            {slide.content.concepts && (
+              <motion.div className="concepts-section" variants={itemVariants}>
+                <h3>📚 Concepts Clés</h3>
+                <div className="concepts-grid">
+                  {slide.content.concepts.map((concept, index) => (
+                    <motion.div
+                      key={index}
+                      className="concept-card"
+                      variants={conceptVariants}
+                      whileHover={{ scale: 1.02, y: -5 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <div className="concept-term">
+                        <h4>{concept.term}</h4>
+                        <span className="concept-metaphor">({concept.metaphor})</span>
                       </div>
-                    ))}
-                  </div>
+                      <div className="concept-definition">
+                        <p>{concept.definition}</p>
+                      </div>
+                      <div className="concept-example">
+                        <strong>Exemple :</strong> {concept.example}
+                      </div>
+                    </motion.div>
+                  ))}
                 </div>
-              )}
-            </div>
-          )}
-        </motion.div>
+              </motion.div>
+            )}
+
+            {/* Summary section */}
+            {slide.content.summary && (
+              <motion.div className="summary-section" variants={itemVariants}>
+                <h3>📝 Résumé</h3>
+                <p className="summary-text">{slide.content.summary}</p>
+              </motion.div>
+            )}
+          </motion.div>
+        )}
+
+        {/* Time indicator */}
+        {slide.time && (
+          <motion.div className="time-indicator" variants={itemVariants}>
+            <span>{slide.time}</span>
+          </motion.div>
+        )}
       </motion.div>
 
       {/* Duration indicator */}

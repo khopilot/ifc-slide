@@ -20,7 +20,7 @@
   max-height: calc(100vh - 2rem);
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
   position: relative;
   z-index: 1;
   overflow: auto;
@@ -34,7 +34,7 @@
 }
 
 .concept-title {
-  font-size: 2.75rem;
+  font-size: 2.5rem;
   font-weight: 800;
   color: #1e293b;
   margin: 0 0 0.5rem 0;
@@ -46,13 +46,13 @@
 }
 
 .concept-subtitle {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   color: #64748b;
   margin: 0;
   font-weight: 500;
 }
 
-/* Duration indicator */
+/* Duration and time indicators */
 .duration-indicator {
   position: absolute;
   top: 1rem;
@@ -67,139 +67,162 @@
   z-index: 10;
 }
 
-/* Main content */
-.concept-main {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+.time-indicator {
+  text-align: center;
+  background: rgba(16, 185, 129, 0.1);
+  border: 2px solid #10b981;
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #10b981;
+  align-self: center;
 }
 
-/* Definition section */
-.definition-section {
+/* Objective section */
+.objective-section {
   background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
   border: 2px solid #93c5fd;
   border-radius: 16px;
-  padding: 2rem;
+  padding: 1.5rem;
   text-align: center;
 }
 
-.definition-section h3 {
-  font-size: 1.5rem;
+.objective-section h3 {
+  font-size: 1.25rem;
   font-weight: 700;
   color: #1e40af;
   margin: 0 0 1rem 0;
 }
 
-.definition-section p {
-  font-size: 1.25rem;
+.objective-section p {
+  font-size: 1.125rem;
   color: #1e293b;
   margin: 0;
   font-weight: 500;
   line-height: 1.6;
 }
 
-/* Key points section */
-.key-points-section {
+/* Concepts section */
+.concepts-section {
   background: white;
   border-radius: 16px;
-  padding: 2rem;
+  padding: 1.5rem;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
   border-left: 4px solid #10b981;
 }
 
-.key-points-section h3 {
-  font-size: 1.375rem;
+.concepts-section h3 {
+  font-size: 1.25rem;
   font-weight: 700;
   color: #10b981;
   margin: 0 0 1.5rem 0;
+  text-align: center;
 }
 
-.key-points-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.key-points-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  font-size: 1.125rem;
-  color: #374151;
-  line-height: 1.6;
-  position: relative;
-  padding-left: 2rem;
-}
-
-.key-points-list li::before {
-  content: '✅';
-  position: absolute;
-  left: 0;
-  top: 0;
-  font-size: 1.25rem;
-}
-
-/* Examples section */
-.examples-section {
-  background: white;
-  border-radius: 16px;
-  padding: 2rem;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  border-left: 4px solid #8b5cf6;
-}
-
-.examples-section h3 {
-  font-size: 1.375rem;
-  font-weight: 700;
-  color: #8b5cf6;
-  margin: 0 0 1.5rem 0;
-}
-
-.examples-grid {
+.concepts-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
+  gap: 1rem;
+  max-height: 50vh;
+  overflow-y: auto;
 }
 
-.example-card {
+.concept-card {
   background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
   border: 2px solid #c4b5fd;
   border-radius: 12px;
-  padding: 1.5rem;
+  padding: 1.25rem;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-.example-card:hover {
+.concept-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(139, 92, 246, 0.15);
 }
 
-.example-card h4 {
+.concept-term {
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 0.75rem;
+}
+
+.concept-term h4 {
   font-size: 1.125rem;
   font-weight: 700;
   color: #5b21b6;
-  margin: 0 0 0.75rem 0;
+  margin: 0 0 0.25rem 0;
 }
 
-.example-card p {
+.concept-metaphor {
+  font-size: 0.875rem;
+  color: #8b5cf6;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.concept-definition {
+  margin-bottom: 1rem;
+}
+
+.concept-definition p {
   font-size: 1rem;
   color: #374151;
   margin: 0;
   line-height: 1.5;
+  font-weight: 500;
+}
+
+.concept-example {
+  font-size: 0.9rem;
+  color: #6b7280;
+  line-height: 1.4;
+  background: rgba(139, 92, 246, 0.05);
+  padding: 0.75rem;
+  border-radius: 8px;
+  border-left: 3px solid #8b5cf6;
+}
+
+.concept-example strong {
+  color: #5b21b6;
+  font-weight: 600;
+}
+
+/* Summary section */
+.summary-section {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border: 2px solid #86efac;
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.summary-section h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #15803d;
+  margin: 0 0 1rem 0;
+}
+
+.summary-text {
+  font-size: 1.125rem;
+  color: #1e293b;
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.6;
+  font-style: italic;
 }
 
 /* Responsive design */
 @media (max-width: 1200px) {
-  .examples-grid {
+  .concepts-grid {
     grid-template-columns: 1fr;
-    gap: 1.25rem;
+    gap: 1rem;
   }
   
-  .concept-main {
-    gap: 1.5rem;
+  .concept-title {
+    font-size: 2.25rem;
   }
 }
 
@@ -209,74 +232,73 @@
   }
   
   .concept-title {
-    font-size: 2.25rem;
+    font-size: 1.875rem;
   }
   
   .concept-subtitle {
-    font-size: 1.125rem;
-  }
-  
-  .concept-content {
-    padding: 0.25rem;
-    gap: 1.5rem;
-  }
-  
-  .definition-section,
-  .key-points-section,
-  .examples-section {
-    padding: 1.5rem;
-  }
-  
-  .definition-section h3,
-  .key-points-section h3,
-  .examples-section h3 {
-    font-size: 1.25rem;
-  }
-  
-  .definition-section p {
-    font-size: 1.125rem;
-  }
-  
-  .key-points-list li {
     font-size: 1rem;
   }
   
-  .example-card {
-    padding: 1.25rem;
+  .concept-content {
+    gap: 1rem;
+  }
+  
+  .objective-section,
+  .concepts-section,
+  .summary-section {
+    padding: 1rem;
+  }
+  
+  .objective-section h3,
+  .concepts-section h3,
+  .summary-section h3 {
+    font-size: 1.125rem;
+  }
+  
+  .objective-section p {
+    font-size: 1rem;
+  }
+  
+  .concept-card {
+    padding: 1rem;
+  }
+  
+  .concepts-grid {
+    max-height: 40vh;
   }
 }
 
-/* Dark mode */
 @media (prefers-color-scheme: dark) {
   .concept-clarification-slide {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
   }
   
   .concept-title {
-    color: #f1f5f9;
+    color: #f8fafc;
   }
   
   .concept-subtitle {
     color: #94a3b8;
   }
   
-  .key-points-section,
-  .examples-section {
-    background: #1e293b;
-    color: #f1f5f9;
+  .concepts-section,
+  .objective-section,
+  .summary-section {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
   }
   
-  .example-card {
-    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-    border-color: #64748b;
+  .concept-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
   }
   
-  .example-card h4 {
+  .concept-card h4 {
     color: #c4b5fd;
   }
   
-  .example-card p,
-  .key-points-list li {
-    color: #d1d5db;
+  .concept-card p,
+  .concept-example {
+    color: #e2e8f0;
   }
 }
