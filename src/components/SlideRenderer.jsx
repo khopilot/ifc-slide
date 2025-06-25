@@ -16,6 +16,10 @@ import ToolShowcaseSlide from '../sessions/day1-afternoon/components/ToolShowcas
 import AfternoonBreakSlide from '../sessions/day1-afternoon/components/AfternoonBreakSlide';
 import ToolLinksSlide from '../sessions/day1-afternoon/components/ToolLinksSlide';
 
+// Day 2 Morning components
+import WorkflowSlide from '../sessions/day2-morning/components/WorkflowSlide';
+import RecapSlide from '../sessions/day2-morning/components/RecapSlide';
+
 const slideComponents = {
   title: TitleSlide,
   timeline: TimelineSlide,
@@ -28,6 +32,14 @@ const slideComponents = {
   'tool-showcase': ToolShowcaseSlide,
   'afternoon-break': AfternoonBreakSlide,
   'tool-links': ToolLinksSlide,
+  // Day 2 Morning components
+  'workflow-presentation': WorkflowSlide,
+  'workflow-intro': WorkflowSlide,
+  'workflow-detail': WorkflowSlide,
+  'recap-slide': RecapSlide,
+  'practical-workshop': PresentationSlide, // Utilise PresentationSlide temporairement
+  'group-presentations': PresentationSlide, // Utilise PresentationSlide temporairement
+  'conclusion': PresentationSlide, // Utilise PresentationSlide temporairement
   // Fallback component for any missing slide types
   default: PresentationSlide
 };
