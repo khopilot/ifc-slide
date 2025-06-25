@@ -154,9 +154,17 @@
 }
 
 .session-subtitle {
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 0.25rem 0;
   font-size: 0.8125rem;
   color: #64748b;
+  font-weight: 500;
+}
+
+.session-description {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.75rem;
+  color: #94a3b8;
+  font-style: italic;
 }
 
 .session-meta {
@@ -356,6 +364,14 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+
+.progress-percentage {
+  font-size: 0.875rem;
+  color: #64748b;
+  font-weight: 600;
+  min-width: 40px;
+  text-align: right;
 }
 
 .progress-info span {

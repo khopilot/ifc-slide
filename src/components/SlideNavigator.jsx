@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   FiX, 
@@ -17,119 +17,178 @@ import './SlideNavigator.css';
 const SlideNavigator = ({ slides, currentSlide, onSelectSlide, onClose }) => {
   const [activeSession, setActiveSession] = useState(null);
 
-  // Organize slides by sessions (4 half-days)
-  const sessions = useMemo(() => {
-    // Find specific slides
-    const mainTitle = slides.find(slide => slide.id === 'main-title');
-    
-    // Separate morning and afternoon slides based on their characteristics
-    const morningSlides = slides.filter(slide => {
-      // Skip main title
-      if (slide.id === 'main-title') return false;
-      
-      // Morning slides have string IDs that start with 'morning-', 'timeline-', 'prompt-', etc.
-      if (typeof slide.id === 'string') {
-        return slide.id.startsWith('morning-') || 
-               slide.id.startsWith('timeline-') || 
-               slide.id.startsWith('prompt-') ||
-               slide.id === 'coffee-break' ||
-               slide.id === 'lunch-break';
-      }
-      return false;
-    });
-    
-    // Afternoon slides have numeric IDs
-    const afternoonSlides = slides.filter(slide => {
-      // Skip main title
-      if (slide.id === 'main-title') return false;
-      
-      // Afternoon slides have numeric IDs or specific afternoon types
-      if (typeof slide.id === 'number') return true;
-      if (slide.type === 'afternoon-title' || slide.type === 'afternoon-break') return true;
-      if (slide.type?.includes('tool-')) return true;
-      
-      return false;
-    });
+  // Configuration simple et claire des sessions
+  const sessionConfig = {
+    'intro': { start: 0, end: 0 },      // 1 slide
+    'day1-morning': { start: 1, end: 33 },   // 33 slides
+    'day1-afternoon': { start: 34, end: 56 }, // 23 slides
+    'day2-morning': { start: 57, end: 69 },   // 13 slides
+    'day2-afternoon': { start: 70, end: 71 }  // 2 slides
+  };
 
-    return [
+  // Organiser les slides par session
+  const sessions = useMemo(() => {
+    if (!slides || slides.length === 0) return [];
+
+    const sessionList = [
       {
         id: 'intro',
         title: 'Introduction',
         icon: <FiBook />,
         time: 'Accueil',
         color: '#6366f1',
-        slides: mainTitle ? [{ ...mainTitle, index: slides.indexOf(mainTitle) }] : []
+        slides: []
       },
       {
         id: 'day1-morning',
-        title: 'Jour 1 - Matin',
-        subtitle: 'Fondamentaux de l\'IA',
+        title: 'Jour 1 - Matinée',
+        subtitle: 'Histoire de l\'IA • Chronologie • Prompt Engineering',
         icon: <FiSun />,
-        time: '9h00 - 12h30',
+        time: '9h00 - 12h00',
         color: '#3b82f6',
-        slides: morningSlides.map((slide) => ({ 
-          ...slide, 
-          index: slides.findIndex(s => s.id === slide.id) 
-        })).sort((a, b) => a.index - b.index)
+        description: 'Timeline IA (1936-2025) + Maîtrise des prompts',
+        slides: []
       },
       {
         id: 'day1-afternoon',
         title: 'Jour 1 - Après-midi',
-        subtitle: 'Outils IA Pratiques',
+        subtitle: 'Exploration des Outils IA • Conversation • Création • Recherche',
         icon: <FiSunset />,
-        time: '14h00 - 17h30',
+        time: '13h30 - 17h00',
         color: '#f59e0b',
-        slides: afternoonSlides.map((slide) => ({ 
-          ...slide, 
-          index: slides.findIndex(s => s.id === slide.id) 
-        })).sort((a, b) => a.index - b.index)
+        description: 'ChatGPT, Claude, DALL-E, Perplexity, Gamma...',
+        slides: []
       },
       {
         id: 'day2-morning',
-        title: 'Jour 2 - Matin',
-        subtitle: 'Projets en Équipe',
+        title: 'Jour 2 - Matinée',
+        subtitle: 'Workflows Avancés • Communication • Maintenance • IT • Événements • Juridique • CDL',
         icon: <FiTarget />,
         time: '9h00 - 12h00',
         color: '#10b981',
-        slides: [] // Placeholder for future sessions
+        description: 'Workflows complets + Atelier création personnalisée',
+        slides: []
       },
       {
         id: 'day2-afternoon',
         title: 'Jour 2 - Après-midi',
-        subtitle: 'Présentations & Conclusion',
+        subtitle: 'Session en développement',
         icon: <FiLayers />,
-        time: '14h00 - 16h00',
+        time: '14h00 - 17h00',
         color: '#8b5cf6',
-        slides: [] // Placeholder for future sessions
+        description: 'Contenu à venir - en cours de développement',
+        slides: []
       }
     ];
+
+    // Assigner les slides aux sessions basé sur les indices
+    slides.forEach((slide, index) => {
+      const slideWithIndex = { ...slide, index };
+      
+      // Trouver quelle session contient cet index
+      for (let session of sessionList) {
+        const config = sessionConfig[session.id];
+        if (index >= config.start && index <= config.end) {
+          session.slides.push(slideWithIndex);
+          break;
+        }
+      }
+    });
+
+    console.log('📊 Session mapping:');
+    sessionList.forEach(session => {
+      console.log(`${session.id}: ${session.slides.length} slides`);
+      if (session.slides.length > 0) {
+        console.log(`  First: ${session.slides[0].id}`);
+        console.log(`  Last: ${session.slides[session.slides.length - 1].id}`);
+      }
+    });
+
+    return sessionList;
   }, [slides]);
 
-  // Get icon for slide type
-  const getSlideIcon = (type) => {
-    switch(type) {
-      case 'title': return '🎯';
-      case 'timeline': return '📅';
-      case 'presentation': return '📊';
-      case 'tool-showcase': return '🛠️';
-      case 'tool-category': return '📦';
-      case 'break': return '☕';
-      case 'afternoon-break': return '☕';
-      case 'afternoon-title': return '🌅';
-      case 'prompt-engineering': return '💡';
-      case 'practical-activity': return '🚀';
-      case 'tool-links': return '🔗';
-      default: return '📄';
+  // Auto-sélection de la session active basée sur le slide actuel
+  useEffect(() => {
+    if (currentSlide >= 0) {
+      // Trouver quelle session contient le slide actuel
+      for (let sessionId in sessionConfig) {
+        const config = sessionConfig[sessionId];
+        if (currentSlide >= config.start && currentSlide <= config.end) {
+          if (activeSession !== sessionId) {
+            setActiveSession(sessionId);
+            console.log(`Auto-selected session: ${sessionId} for slide ${currentSlide}`);
+          }
+          break;
+        }
+      }
     }
+  }, [currentSlide, activeSession]);
+
+  // Obtenir l'icône pour le type de slide
+  const getSlideIcon = (type) => {
+    const iconMap = {
+      'title': '🎯',
+      'recap-slide': '🔄',
+      'concept-clarification': '💡',
+      'timeline': '📅',
+      'presentation': '📊',
+      'prompt-engineering': '💡',
+      'practical-activity': '🚀',
+      'afternoon-title': '🌅',
+      'tool-showcase': '🛠️',
+      'tool-category': '📦',
+      'tool-links': '🔗',
+      'communication-workflow': '📢',
+      'maintenance-workflow': '🔧',
+      'it-workspace': '💻',
+      'event-workflow': '🎭',
+      'legal-workflow': '⚖️',
+      'cdl-recruitment': '📚',
+      'team-formation': '👥',
+      'meta-workflow': '🎨',
+      'workshop-scenarios': '📋',
+      'practical-workshop': '🛠️',
+      'break': '☕',
+      'afternoon-break': '☕',
+      'lunch': '🍽️'
+    };
+    return iconMap[type] || '📄';
   };
 
-  // Get readable title for timeline slides
+  // Obtenir un titre lisible pour les slides
   const getSlideTitle = (slide) => {
-    if (slide.id && typeof slide.id === 'string' && slide.id.startsWith('timeline-')) {
+    if (!slide || !slide.id) return slide?.title || 'Sans titre';
+    
+    // Gestion des timeline
+    if (typeof slide.id === 'string' && slide.id.startsWith('timeline-')) {
       const year = slide.id.replace('timeline-', '');
-      return `${year} - ${slide.title}`;
+      return `${year} - ${slide.title || ''}`;
     }
-    return slide.title;
+    
+    // Titres personnalisés pour Day 2
+    const day2Titles = {
+      'day2-morning-title': 'Workflows IA - Jour 2',
+      'day2-recap': 'Récapitulatif Jour 1',
+      'day2-concept-clarification': 'Concepts Clés',
+      'day2-communication-workflow': 'Communication IFC',
+      'day2-maintenance-workflow': 'Maintenance Technique',
+      'day2-it-workspace': 'IT & Google Workspace',
+      'day2-event-workflow': 'Événementiel',
+      'day2-legal-workflow': 'Juridique & Contrats',
+      'day2-cdl-recruitment': 'CDL - Recrutement',
+      'day2-morning-break': 'Pause Matinée',
+      'day2-team-formation': 'Formation Équipes',
+      'day2-meta-workflow': 'Atelier Création Workflows',
+      'day2-lunch': 'Déjeuner',
+      'day2-afternoon-title': 'Jour 2 - Après-midi',
+      'day2-afternoon-placeholder': 'Contenu à venir'
+    };
+    
+    if (typeof slide.id === 'string' && slide.id.startsWith('day2-')) {
+      return day2Titles[slide.id] || slide.title || slide.id;
+    }
+    
+    return slide.title || slide.id || 'Sans titre';
   };
 
   return (
@@ -151,8 +210,8 @@ const SlideNavigator = ({ slides, currentSlide, onSelectSlide, onClose }) => {
           {/* Header */}
           <header className="navigator-header-modern">
             <div className="header-left">
-              <h2>Plan de Formation</h2>
-              <p className="header-subtitle">Intelligence Artificielle - Institut Français</p>
+              <h2>Formation IA - IFC</h2>
+              <p className="header-subtitle">Intelligence Artificielle pour l'Institut Français du Cambodge</p>
             </div>
             <motion.button 
               className="close-btn-modern" 
@@ -185,6 +244,7 @@ const SlideNavigator = ({ slides, currentSlide, onSelectSlide, onClose }) => {
                   <div className="session-info">
                     <h3>{session.title}</h3>
                     {session.subtitle && <p className="session-subtitle">{session.subtitle}</p>}
+                    {session.description && <p className="session-description">{session.description}</p>}
                     <div className="session-meta">
                       <FiClock size={12} />
                       <span>{session.time}</span>
@@ -216,7 +276,7 @@ const SlideNavigator = ({ slides, currentSlide, onSelectSlide, onClose }) => {
                 >
                   {sessions.find(s => s.id === activeSession)?.slides.map((slide, idx) => (
                     <motion.div
-                      key={slide.id}
+                      key={`${slide.id || idx}-${slide.index}`}
                       className={`slide-item ${slide.index === currentSlide ? 'current' : ''}`}
                       onClick={() => onSelectSlide(slide.index)}
                       initial={{ opacity: 0, y: 10 }}
@@ -252,9 +312,9 @@ const SlideNavigator = ({ slides, currentSlide, onSelectSlide, onClose }) => {
                 </motion.div>
               ) : (
                 <div className="empty-state">
-                  <div className="empty-icon">📚</div>
+                  <div className="empty-icon">🎓</div>
                   <h3>Sélectionnez une session</h3>
-                  <p>Cliquez sur une session pour voir les slides disponibles</p>
+                  <p>Choisissez une session de formation pour explorer les slides et le contenu disponible</p>
                 </div>
               )}
             </AnimatePresence>
@@ -263,16 +323,17 @@ const SlideNavigator = ({ slides, currentSlide, onSelectSlide, onClose }) => {
           {/* Footer */}
           <footer className="navigator-footer">
             <div className="progress-info">
-              <span>Progression: {currentSlide + 1} / {slides.length}</span>
+              <span>Slide actuel: {currentSlide + 1} / {slides.length}</span>
               <div className="progress-bar">
                 <div 
                   className="progress-fill" 
                   style={{ width: `${((currentSlide + 1) / slides.length) * 100}%` }}
                 />
               </div>
+              <span className="progress-percentage">{Math.round(((currentSlide + 1) / slides.length) * 100)}%</span>
             </div>
             <div className="keyboard-hint">
-              <kbd>ESC</kbd> pour fermer • <kbd>←</kbd> <kbd>→</kbd> pour naviguer
+              <kbd>ESC</kbd> fermer • <kbd>←</kbd> <kbd>→</kbd> naviguer • <kbd>N</kbd> navigation
             </div>
           </footer>
         </motion.div>

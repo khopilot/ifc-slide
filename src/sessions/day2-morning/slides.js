@@ -1445,6 +1445,184 @@ export const day2MorningSlides = [
     notes: 'Présenter chaque étape avec exemples concrets'
   },
 
+  // Workflow CDL : Recrutement de Formateurs
+  {
+    id: 'day2-cdl-recruitment',
+    type: 'cdl-recruitment',
+    title: '📚 Workflow CDL : Recrutement de Formateurs',
+    subtitle: 'Campus des Langues - Processus optimisé de recrutement',
+    content: {
+      objective: 'Automatiser et optimiser le processus de recrutement des formateurs de français en utilisant l\'IA pour le tri, l\'évaluation et la communication',
+      department: 'Campus des Langues (CDL)',
+      estimatedTime: '45-60 minutes par candidat',
+      timeGain: '86%',
+      steps: [
+        {
+          title: 'Réception et Tri Automatique des CV',
+          duration: '5 min',
+          objective: 'Pré-sélectionner automatiquement les candidatures pertinentes',
+          prompt: 'Tu es expert RH pour le Campus des Langues au Cambodge.\n\nAnalyse ce CV et donne :\n\n1. SCORE GLOBAL (/100) basé sur :\n- Diplômes FLE/DAEFLE/Master FLE (30 pts)\n- Expérience enseignement français (25 pts)\n- Expérience Asie/Cambodge (20 pts)\n- Langues (FR natif, anglais, khmer bonus) (15 pts)\n- Adaptabilité culturelle (10 pts)\n\n2. RECOMMANDATION :\n- 🟢 EXCELLENT (80+) : Entretien prioritaire\n- 🟡 BON (60-79) : Entretien standard\n- 🔴 INSUFFISANT (&lt;60) : Refus courtois\n\n3. POINTS FORTS (3 max)\n4. POINTS D\'ATTENTION (2 max)',
+          tool: 'ChatGPT',
+          output: 'Score automatisé, recommandation et synthèse du profil'
+        },
+        {
+          title: 'Génération Automatique d\'Emails',
+          duration: '3 min',
+          objective: 'Créer des réponses personnalisées selon le profil',
+          prompts: [
+            'Rédige un email de convocation à l\'entretien pour [PRÉNOM] basé sur son profil : [SYNTHÈSE CV]. Ton : chaleureux mais professionnel. Format : Objet + contenu avec date/heure/format à remplir.',
+            'Rédige un email de refus bienveillant pour [PRÉNOM]. Souligne ses qualités, explique que le profil ne correspond pas actuellement, encourage à repostuler plus tard.'
+          ],
+          tool: 'ChatGPT',
+          output: 'Emails personnalisés prêts à envoyer'
+        },
+        {
+          title: 'Préparation d\'Entretien Personnalisée',
+          duration: '8 min',
+          objective: 'Créer un guide d\'entretien adapté au profil',
+          prompt: 'Crée un guide d\'entretien pour [PRÉNOM] candidat formateur CDL.\n\nProfil : [SYNTHÈSE CV]\n\nGénère :\n\n1. QUESTIONS TECHNIQUES (5) :\n- Pédagogie FLE adaptée au Cambodge\n- Gestion classe multiculturelle\n- Outils numériques enseignement\n\n2. QUESTIONS CONTEXTUELLES (4) :\n- Adaptation culturelle Asie\n- Disponibilités horaires\n- Projets à long terme\n\n3. MISE EN SITUATION (1) :\nScénario pédagogique concret\n\n4. GRILLE ÉVALUATION :\nCritères avec notation /20',
+          tool: 'Claude',
+          output: 'Guide d\'entretien personnalisé et grille d\'évaluation'
+        },
+        {
+          title: 'Test Pédagogique Automatisé',
+          duration: '10 min',
+          objective: 'Évaluer les compétences pédagogiques via IA',
+          prompt: 'Crée un test pédagogique pour candidat formateur FLE niveau [NIVEAU].\n\nSituation : Classe de 12 étudiants cambodgiens, âge 20-30 ans\nObjectif : Enseigner [NOTION GRAMAIRE/VOCABULAIRE]\nDurée : 45 min\n\nLe candidat doit :\n1. Structurer sa séquence (10 étapes max)\n2. Prévoir supports/activités\n3. Anticiper difficultés cambodgiennes\n4. Proposer évaluation\n\nGénère grille de correction avec :\n- Créativité pédagogique /5\n- Adaptation culturelle /5  \n- Structure logique /5\n- Gestion temps /5',
+          tool: 'Claude',
+          output: 'Exercice pédagogique et grille de correction standardisée'
+        },
+        {
+          title: 'Synthèse Décisionnelle',
+          duration: '7 min',
+          objective: 'Compiler toutes les données pour décision finale',
+          prompt: 'Synthèse candidat [PRÉNOM] pour poste formateur CDL :\n\nCV (score/100) : [SCORE]\nEntretien (notes) : [NOTES]\nTest pédagogique (/20) : [SCORE]\n\nCrée FICHE DÉCISION :\n\n1. RECOMMANDATION FINALE :\n🟢 RECRUTER / 🟡 LISTE ATTENTE / 🔴 REFUSER\n\n2. JUSTIFICATION (3 points)\n\n3. CONDITIONS si recrutement :\n- Salaire proposé\n- Période d\'essai\n- Formation complémentaire nécessaire\n\n4. POINTS DE VIGILANCE\n\n5. FEEDBACK candidat (3 points constructifs)',
+          tool: 'ChatGPT',
+          output: 'Fiche de décision complète et argumentée'
+        },
+        {
+          title: 'Communication Post-Entretien',
+          duration: '5 min',
+          objective: 'Informer le candidat de la décision avec feedback',
+          prompts: [
+            'Email de félicitations + offre pour [PRÉNOM] retenu. Inclure : salaire, démarrage, formation d\'intégration CDL, documents à fournir',
+            'Email de feedback constructif pour [PRÉNOM] non retenu. Souligner points positifs, expliquer axes d\'amélioration, encourager nouvelle candidature dans 6 mois'
+          ],
+          tool: 'ChatGPT',
+          output: 'Email de communication finale personnalisé'
+        },
+        {
+          title: 'Constitution du Dossier',
+          duration: '12 min',
+          objective: 'Archiver toute la procédure pour suivi RH',
+          prompt: 'Crée dossier candidat [PRÉNOM] pour archives CDL :\n\n1. FICHE CANDIDAT :\n- Profil synthétique\n- Parcours/expérience\n- Coordonnées complètes\n\n2. HISTORIQUE RECRUTEMENT :\n- Scores détaillés toutes étapes\n- Notes entretien\n- Décision + justification\n\n3. TEMPLATES GÉNÉRÉS :\n- Emails envoyés\n- Questions entretien\n- Test pédagogique\n\n4. SUIVI :\n- Si recruté : intégration, formation\n- Si refusé : relance possible dans X mois\n\nFormat : PDF exportable + version modifiable',
+          tool: 'Notion/Claude',
+          output: 'Dossier candidat complet archivé et traçable',
+          attention: 'Respecter RGPD : anonymiser après 2 ans si non recruté'
+        }
+      ],
+      interviewQuestions: [
+        {
+          category: 'Adaptation Culturelle Cambodge',
+          questions: [
+            'Quelle est votre compréhension de la culture éducative cambodgienne ?',
+            'Comment adapteriez-vous vos méthodes aux étudiants khmers ?',
+            'Avez-vous de l\'expérience en Asie du Sud-Est ?',
+            'Comment gérez-vous les différences hiérarchiques ?'
+          ]
+        },
+        {
+          category: 'Compétences Pédagogiques FLE',
+          questions: [
+            'Décrivez votre approche pour enseigner la grammaire française',
+            'Comment motivez-vous des étudiants adultes ?',
+            'Quels outils numériques utilisez-vous ?',
+            'Comment évaluez-vous la progression ?'
+          ]
+        },
+        {
+          category: 'Aspects Pratiques',
+          questions: [
+            'Quelles sont vos disponibilités horaires ?',
+            'Combien de temps envisagez-vous de rester au Cambodge ?',
+            'Quelle est votre situation de visa ?',
+            'Avez-vous des contraintes de logement ?'
+          ]
+        }
+      ],
+      vigilancePoints: [
+        {
+          title: 'Biais culturels',
+          items: [
+            'Éviter stéréotypes sur candidats occidentaux/locaux',
+            'Valoriser diversité d\'approches pédagogiques',
+            'Vérifier adaptabilité réelle au contexte'
+          ]
+        },
+        {
+          title: 'Données personnelles',
+          items: [
+            'Anonymiser CVs dans prompts IA',
+            'Ne pas stocker données sensibles en ligne',
+            'Respecter délais RGPD pour archivage'
+          ]
+        },
+        {
+          title: 'Validation humaine',
+          items: [
+            'Décision finale toujours prise par humain',
+            'Recouper scores IA avec intuition RH',
+            'Prévoir entretien de rattrapage si doute'
+          ]
+        }
+      ],
+      checklistPhases: [
+        {
+          phase: 'PRÉ-SÉLECTION',
+          items: [
+            '□ CV analysé par IA avec score /100',
+            '□ Vérification diplômes FLE obligatoires',
+            '□ Email automatique envoyé (convocation/refus)',
+            '□ Calendrier entretien proposé',
+            '□ Dossier candidat créé dans système'
+          ]
+        },
+        {
+          phase: 'ENTRETIEN',
+          items: [
+            '□ Guide d\'entretien personnalisé préparé',
+            '□ Questions contextuelles Cambodge ready',
+            '□ Grille d\'évaluation imprimée',
+            '□ Test pédagogique adapté au niveau',
+            '□ Notes détaillées prises pendant entretien'
+          ]
+        },
+        {
+          phase: 'DÉCISION',
+          items: [
+            '□ Synthèse IA générée avec tous scores',
+            '□ Discussion équipe CDL réalisée',
+            '□ Décision finale validée par responsable',
+            '□ Conditions d\'embauche définies si OK',
+            '□ Email de réponse envoyé sous 48h'
+          ]
+        },
+        {
+          phase: 'SUIVI',
+          items: [
+            '□ Dossier candidat archivé (RGPD compliant)',
+            '□ Si recruté : planning intégration lancé',
+            '□ Si refusé : relance programmée dans 6 mois',
+            '□ Feedback process documenté pour amélioration',
+            '□ Métriques de recrutement mises à jour'
+          ]
+        }
+      ]
+    },
+    duration: '30 min',
+    notes: 'Workflow spécialement adapté au contexte du Campus des Langues au Cambodge'
+  },
+
   // Pause
   {
     id: 'day2-morning-break',

@@ -274,7 +274,7 @@ const MetaWorkflowSlide = ({ slide }) => {
           <div className="indicator-phase">
             <h4>Mois 1</h4>
             <ul>
-              <li>Adoption >60%</li>
+                              <li>Adoption &gt;60%</li>
               <li>Temps gagné mesurable</li>
               <li>Workflow v2 déployé</li>
             </ul>
