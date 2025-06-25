@@ -1,8 +1,6 @@
 // Jour 2 - Matinée : Workflows IA Optimisés
 // 9h00 - 12h00
 
-import { jour2MatinSlides } from './jour2-recap-slides.js';
-
 export const day2MorningSlides = [
   // Slide de titre principal
   {
