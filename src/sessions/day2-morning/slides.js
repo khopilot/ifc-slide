@@ -608,11 +608,11 @@ export const day2MorningSlides = [
         }
       ],
       dashboard: [
-        { indicator: 'Interventions urgentes', target: '&lt;5', actual: '3', status: '✅' },
-        { indicator: 'Délai moyen résolution', target: '&lt;24h', actual: '18h', status: '✅' },
+        { indicator: 'Interventions urgentes', target: '<5', actual: '3', status: '✅' },
+        { indicator: 'Délai moyen résolution', target: '<24h', actual: '18h', status: '✅' },
         { indicator: 'Préventif réalisé', target: '100%', actual: '95%', status: '⚠️' },
-        { indicator: 'Budget consommé', target: '&lt;80%', actual: '72%', status: '✅' },
-        { indicator: 'Satisfaction usagers', target: '&gt;4/5', actual: '4.3/5', status: '✅' }
+        { indicator: 'Budget consommé', target: '<80%', actual: '72%', status: '✅' },
+        { indicator: 'Satisfaction usagers', target: '>4/5', actual: '4.3/5', status: '✅' }
       ],
       dailyChecklist: [
         'Éclairages extérieurs éteints',
@@ -815,11 +815,11 @@ export const day2MorningSlides = [
         }
       ],
       kpis: [
-        { indicator: 'Temps résolution ticket', target: '&lt;4h', measure: 'Google Forms + Sheets' },
-        { indicator: 'Uptime services', target: '&gt;99.5%', measure: 'Monitoring automatique' },
+        { indicator: 'Temps résolution ticket', target: '<4h', measure: 'Google Forms + Sheets' },
+        { indicator: 'Uptime services', target: '>99.5%', measure: 'Monitoring automatique' },
         { indicator: 'Adoption 2FA', target: '100%', measure: 'Admin Console' },
-        { indicator: 'Formation complétée', target: '&gt;80%', measure: 'LMS tracking' },
-        { indicator: 'Satisfaction support', target: '&gt;4.5/5', measure: 'Survey mensuel' }
+        { indicator: 'Formation complétée', target: '>80%', measure: 'LMS tracking' },
+        { indicator: 'Satisfaction support', target: '>4.5/5', measure: 'Survey mensuel' }
       ],
       incidentResponse: [
         {
@@ -860,7 +860,7 @@ export const day2MorningSlides = [
           title: 'Rapports Automatiques',
           steps: [
             'Stats utilisation hebdo',
-            'Alertes stockage &gt;80%',
+            'Alertes stockage >80%',
             'Comptes inactifs',
             'Licences non utilisées'
           ]
@@ -1183,7 +1183,7 @@ export const day2MorningSlides = [
       sponsorshipPackages: [
         {
           level: 'MÉCÈNE',
-          price: '&gt;5000$',
+          price: '>5000$',
           color: '#fbbf24',
           benefits: [
             'Naming espace principal',
@@ -1205,7 +1205,7 @@ export const day2MorningSlides = [
         },
         {
           level: 'SOUTIEN',
-          price: '&lt;2000$',
+          price: '<2000$',
           color: '#60a5fa',
           benefits: [
             'Logo partenaires',
@@ -1561,7 +1561,7 @@ export const day2MorningSlides = [
       ],
       metrics: [
         { kpi: 'Temps/tâche', before: '2h', target: '30min', actual: '?' },
-        { kpi: 'Erreurs', before: '15%', target: '&lt;5%', actual: '?' },
+        { kpi: 'Erreurs', before: '15%', target: '<5%', actual: '?' },
         { kpi: 'Satisfaction', before: '3/5', target: '4.5/5', actual: '?' },
         { kpi: 'Adoption', before: '0%', target: '80%', actual: '?' },
         { kpi: 'ROI', before: '-', target: '300%', actual: '?' }
