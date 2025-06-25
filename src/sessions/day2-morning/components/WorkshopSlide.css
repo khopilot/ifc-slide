@@ -1,0 +1,479 @@
+/* ===================================
+   WORKSHOP SLIDE - DESIGN COMPACT
+   =================================== */
+
+.workshop-slide {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.workshop-content {
+  width: 100%;
+  max-width: 1400px;
+  max-height: calc(100vh - 2rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+  z-index: 1;
+  overflow: auto;
+  padding: 0.5rem;
+}
+
+/* Header */
+.workshop-header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.workshop-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.1;
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.workshop-subtitle {
+  font-size: 1.25rem;
+  color: #64748b;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Duration indicator */
+.duration-indicator {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(59, 130, 246, 0.1);
+  border: 2px solid #3b82f6;
+  border-radius: 16px;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #3b82f6;
+  z-index: 10;
+}
+
+/* =====================================
+   PRACTICAL WORKSHOP
+   ===================================== */
+
+.workshop-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.workshop-objective {
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  border: 2px solid #93c5fd;
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.workshop-objective h3 {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: #1e40af;
+  margin: 0 0 0.75rem 0;
+}
+
+.workshop-objective p {
+  font-size: 1.125rem;
+  color: #1e293b;
+  margin: 0 0 1rem 0;
+  font-weight: 500;
+}
+
+.time-allocation {
+  display: inline-block;
+  background: #3b82f6;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.workshop-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+/* Groups Section */
+.groups-section h3,
+.steps-section h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 1rem 0;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 0.5rem;
+}
+
+.groups-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.group-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid #3b82f6;
+  transition: all 0.2s ease;
+}
+
+.group-card:hover {
+  transform: translateX(5px);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.15);
+}
+
+.group-service {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #3b82f6;
+  margin: 0 0 0.5rem 0;
+}
+
+.group-challenge {
+  font-size: 0.9rem;
+  color: #374151;
+  margin: 0 0 0.75rem 0;
+  line-height: 1.4;
+}
+
+.group-tools strong {
+  font-size: 0.875rem;
+  color: #1e293b;
+}
+
+.tools-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.tool-tag {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Steps Section */
+.steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.step-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: white;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+.step-number {
+  width: 32px;
+  height: 32px;
+  background: #10b981;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.875rem;
+  flex-shrink: 0;
+}
+
+/* =====================================
+   GROUP PRESENTATIONS
+   ===================================== */
+
+.presentations-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.presentation-format {
+  background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
+  border: 2px solid #c4b5fd;
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.presentation-format h3 {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: #5b21b6;
+  margin: 0 0 0.75rem 0;
+}
+
+.presentation-format p {
+  font-size: 1.125rem;
+  color: #1e293b;
+  margin: 0;
+  font-weight: 500;
+}
+
+.evaluation-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+.evaluation-section,
+.prizes-section {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.evaluation-section h3,
+.prizes-section h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 1rem 0;
+}
+
+.evaluation-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.evaluation-list li {
+  padding: 0.75rem 0;
+  font-size: 1rem;
+  color: #374151;
+  border-bottom: 1px solid #e2e8f0;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.evaluation-list li:last-child {
+  border-bottom: none;
+}
+
+.evaluation-list li::before {
+  content: '⭐';
+  position: absolute;
+  left: 0;
+  top: 0.75rem;
+}
+
+.prizes-section {
+  border-left: 4px solid #f59e0b;
+}
+
+.prizes-section h3 {
+  color: #f59e0b;
+}
+
+.prizes-section p {
+  font-size: 1rem;
+  color: #374151;
+  line-height: 1.6;
+}
+
+/* =====================================
+   CONCLUSION
+   ===================================== */
+
+.conclusion-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.conclusion-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.achievements-section,
+.next-steps-section,
+.resources-section {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.achievements-section {
+  border-left: 4px solid #10b981;
+}
+
+.next-steps-section {
+  border-left: 4px solid #3b82f6;
+}
+
+.resources-section {
+  border-left: 4px solid #8b5cf6;
+}
+
+.achievements-section h3 {
+  color: #10b981;
+}
+
+.next-steps-section h3 {
+  color: #3b82f6;
+}
+
+.resources-section h3 {
+  color: #8b5cf6;
+}
+
+.conclusion-grid h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+}
+
+.conclusion-grid ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.conclusion-grid li {
+  padding: 0.5rem 0;
+  font-size: 0.95rem;
+  color: #374151;
+  border-bottom: 1px solid #e2e8f0;
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.conclusion-grid li:last-child {
+  border-bottom: none;
+}
+
+.achievements-section li::before {
+  content: '✅';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+}
+
+.next-steps-section li::before {
+  content: '🚀';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+}
+
+.resources-section li::before {
+  content: '📚';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+  .workshop-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .evaluation-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .conclusion-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .workshop-slide {
+    padding: 0.75rem;
+  }
+  
+  .workshop-title {
+    font-size: 2rem;
+  }
+  
+  .workshop-subtitle {
+    font-size: 1.125rem;
+  }
+  
+  .workshop-content {
+    padding: 0.25rem;
+  }
+  
+  .groups-container {
+    gap: 0.75rem;
+  }
+  
+  .group-card {
+    padding: 1rem;
+  }
+  
+  .step-item {
+    padding: 0.75rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .workshop-slide {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  }
+  
+  .workshop-title {
+    color: #f1f5f9;
+  }
+  
+  .workshop-subtitle {
+    color: #94a3b8;
+  }
+  
+  .group-card,
+  .step-item,
+  .evaluation-section,
+  .prizes-section,
+  .achievements-section,
+  .next-steps-section,
+  .resources-section {
+    background: #1e293b;
+    color: #f1f5f9;
+  }
+} 
