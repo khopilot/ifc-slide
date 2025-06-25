@@ -6,6 +6,44 @@ import AfternoonBreakSlide from './components/AfternoonBreakSlide';
 import PresentationSlide from '../day1-morning/components/PresentationSlide';
 import PracticalActivitySlide from './components/PracticalActivitySlide';
 
+// Import all tool images
+import chatgptImage1 from './images/chatgpt_illustration_1.jpg';
+import chatgptImage2 from './images/chatgpt_illustration_2.jpg';
+import chatgptImage3 from './images/chatgpt_illustration_3.jpg';
+import claudeImage1 from './images/claude_illustration_1.jpg';
+import claudeImage2 from './images/claude_illustration_2.jpg';
+import claudeImage3 from './images/claude_illustration_3.jpg';
+import geminiImage1 from './images/gemini_illustration_1.jpeg';
+import geminiImage2 from './images/gemini_illustration_2.jpg';
+import geminiImage3 from './images/gemini_illustration_3.png';
+import dalleImage1 from './images/dalle_gpt_image_1_illustration_1.jpeg';
+import dalleImage2 from './images/dalle_gpt_image_1_illustration_2.jpeg';
+import dalleImage3 from './images/dalle_gpt_image_1_illustration_3.jpg';
+import fluxImage1 from './images/flux_illustration_1.png';
+import fluxImage2 from './images/flux_illustration_2.jpg';
+import fluxImage3 from './images/flux_illustration_3.png';
+import canvaImage1 from './images/canva_illustration_1.jpg';
+import canvaImage2 from './images/canva_illustration_2.jpg';
+import canvaImage3 from './images/canva_illustration_3.jpg';
+import elevenLabsImage1 from './images/eleven_labs_illustration_1.jpg';
+import elevenLabsImage2 from './images/eleven_labs_illustration_2.png';
+import elevenLabsImage3 from './images/eleven_labs_illustration_3.jpg';
+import perplexityImage1 from './images/perplexity_ai_illustration_1.png';
+import perplexityImage2 from './images/perplexity_ai_illustration_2.jpg';
+import perplexityImage3 from './images/perplexity_ai_illustration_3.png';
+import notebookImage1 from './images/notebook_lm_illustration_1.png';
+import notebookImage2 from './images/notebook_lm_illustration_2.webp';
+import notebookImage3 from './images/notebook_lm_illustration_3.png';
+import gammaImage1 from './images/gamma_illustration_1.jpeg';
+import gammaImage2 from './images/gamma_illustration_2.jpg';
+import gammaImage3 from './images/gamma_illustration_3.png';
+import mistralImage1 from './images/mistral_ai_illustration_1.webp';
+import mistralImage2 from './images/mistral_ai_illustration_2.webp';
+import mistralImage3 from './images/mistral_ai_illustration_3.webp';
+import grokImage1 from './images/grok_2_illustration_1.jpg';
+import grokImage2 from './images/grok_2_illustration_2.png';
+import grokImage3 from './images/grok_2_illustration_3.jpg';
+
 export const afternoonSlides = [
   // 1. Slide de titre
   {
@@ -86,7 +124,12 @@ export const afternoonSlides = [
       company: 'OpenAI',
       year: '2022',
       url: 'https://chat.openai.com/',
-      image: '/src/sessions/day1-afternoon/images/chatgpt_illustration_1.jpg',
+      image: chatgptImage1,
+      images: [
+        { src: chatgptImage1, size: 'large' },
+        { src: chatgptImage2, size: 'medium' },
+        { src: chatgptImage3, size: 'small' }
+      ],
       description: 'ChatGPT est un modèle de langage avancé basé sur l\'architecture GPT, conçu pour comprendre et générer du texte de manière cohérente. Il permet des conversations fluides et la réalisation de diverses tâches linguistiques avec des capacités multimodales incluant DALL·E.',
       keyFeatures: [
         'Conversation en langage naturel fluide',
@@ -116,7 +159,12 @@ export const afternoonSlides = [
       company: 'Anthropic',
       year: '2023',
       url: 'https://claude.ai/',
-      image: '/src/sessions/day1-afternoon/images/claude_illustration_1.jpg',
+      image: claudeImage1,
+      images: [
+        { src: claudeImage1, size: 'large' },
+        { src: claudeImage2, size: 'medium' },
+        { src: claudeImage3, size: 'small' }
+      ],
       description: 'Claude est un modèle de langage étendu conçu pour être utile, inoffensif et honnête. Il excelle dans le traitement de longs contextes et adhère à des principes d\'IA constitutionnelle pour des réponses éthiques et fiables.',
       keyFeatures: [
         'Traitement de très longs documents et conversations',
@@ -146,7 +194,12 @@ export const afternoonSlides = [
       company: 'Google DeepMind',
       year: '2023',
       url: 'https://gemini.google.com/',
-      image: '/src/sessions/day1-afternoon/images/gemini_illustration_1.jpeg',
+      image: geminiImage1,
+      images: [
+        { src: geminiImage1, size: 'large' },
+        { src: geminiImage2, size: 'medium' },
+        { src: geminiImage3, size: 'small' }
+      ],
       description: 'Gemini est une famille de modèles d\'IA multimodaux conçus pour être hautement performants et polyvalents. Capable de comprendre et d\'opérer sur différents types de données (texte, code, audio, image, vidéo).',
       keyFeatures: [
         'Multimodalité native (texte, code, audio, image, vidéo)',
@@ -212,7 +265,12 @@ export const afternoonSlides = [
       company: 'OpenAI',
       year: '2021',
       url: 'https://openai.com/dall-e-3',
-      image: '/src/sessions/day1-afternoon/images/dalle_gpt_image_1_illustration_1.jpeg',
+      image: dalleImage1,
+      images: [
+        { src: dalleImage1, size: 'large' },
+        { src: dalleImage2, size: 'medium' },
+        { src: dalleImage3, size: 'small' }
+      ],
       description: 'DALL·E est un modèle d\'IA capable de générer des images à partir de descriptions textuelles. GPT-Image-1 représente une avancée majeure avec des capacités de création visuelle plus sophistiquées et contextuellement conscientes.',
       keyFeatures: [
         'Génération d\'images à partir de descriptions textuelles',
@@ -242,7 +300,12 @@ export const afternoonSlides = [
       company: 'Black Forest Labs',
       year: '2024',
       url: 'https://blackforestlabs.ai/',
-      image: '/src/sessions/day1-afternoon/images/flux_illustration_1.png',
+      image: fluxImage1,
+      images: [
+        { src: fluxImage1, size: 'large' },
+        { src: fluxImage2, size: 'medium' },
+        { src: fluxImage3, size: 'small' }
+      ],
       description: 'FLUX.1 Kontext est un modèle de génération d\'images développé par Black Forest Labs, se distinguant par sa capacité à générer des images de haute qualité avec une compréhension contextuelle avancée.',
       keyFeatures: [
         'Génération d\'images de haute fidélité',
@@ -272,7 +335,12 @@ export const afternoonSlides = [
       company: 'Canva Inc.',
       year: '2013',
       url: 'https://www.canva.com/',
-      image: '/src/sessions/day1-afternoon/images/canva_illustration_1.jpg',
+      image: canvaImage1,
+      images: [
+        { src: canvaImage1, size: 'large' },
+        { src: canvaImage2, size: 'medium' },
+        { src: canvaImage3, size: 'small' }
+      ],
       description: 'Canva est une plateforme de conception graphique en ligne qui rend le design accessible à tous. Avec son interface intuitive et ses outils IA intégrés, elle permet de créer facilement des contenus visuels professionnels.',
       keyFeatures: [
         'Interface glisser-déposer intuitive',
@@ -302,7 +370,12 @@ export const afternoonSlides = [
       company: 'Eleven Labs',
       year: '2022',
       url: 'https://elevenlabs.io/',
-      image: '/src/sessions/day1-afternoon/images/eleven_labs_illustration_1.jpg',
+      image: elevenLabsImage1,
+      images: [
+        { src: elevenLabsImage1, size: 'large' },
+        { src: elevenLabsImage2, size: 'medium' },
+        { src: elevenLabsImage3, size: 'small' }
+      ],
       description: 'Eleven Labs est un pionnier de la synthèse vocale ultra-réaliste et du clonage de voix. Cette technologie révolutionnaire permet de créer des voix naturelles et expressives à partir de texte, ouvrant de nouvelles possibilités créatives.',
       keyFeatures: [
         'Synthèse vocale ultra-réaliste et naturelle',
@@ -367,7 +440,12 @@ export const afternoonSlides = [
       company: 'Perplexity',
       year: '2022',
       url: 'https://www.perplexity.ai/',
-      image: '/src/sessions/day1-afternoon/images/perplexity_ai_illustration_1.png',
+      image: perplexityImage1,
+      images: [
+        { src: perplexityImage1, size: 'large' },
+        { src: perplexityImage2, size: 'medium' },
+        { src: perplexityImage3, size: 'small' }
+      ],
       description: 'Perplexity AI est un moteur de recherche conversationnel qui fournit des réponses directes et sourcées. Il synthétise l\'information de multiples sources et présente des réponses concises avec citations vérifiables.',
       keyFeatures: [
         'Réponses directes avec sources citées',
@@ -397,7 +475,12 @@ export const afternoonSlides = [
       company: 'Google',
       year: '2023',
       url: 'https://notebooklm.google.com/',
-      image: '/src/sessions/day1-afternoon/images/notebook_lm_illustration_1.png',
+      image: notebookImage1,
+      images: [
+        { src: notebookImage1, size: 'large' },
+        { src: notebookImage2, size: 'medium' },
+        { src: notebookImage3, size: 'small' }
+      ],
       description: 'NotebookLM est un assistant de recherche et d\'écriture qui aide à synthétiser des informations et créer du contenu à partir de vos propres documents. Il agit comme un "cerveau numérique" personnalisé.',
       keyFeatures: [
         'Analyse de documents sources personnels',
@@ -463,7 +546,12 @@ export const afternoonSlides = [
       company: 'Gamma',
       year: '2022',
       url: 'https://gamma.app/',
-      image: '/src/sessions/day1-afternoon/images/gamma_illustration_1.jpeg',
+      image: gammaImage1,
+      images: [
+        { src: gammaImage1, size: 'large' },
+        { src: gammaImage2, size: 'medium' },
+        { src: gammaImage3, size: 'small' }
+      ],
       description: 'Gamma est un outil de présentation nouvelle génération qui utilise l\'IA pour créer des présentations, documents et pages web visuellement attrayants en un temps record, révolutionnant le processus de création.',
       keyFeatures: [
         'Création rapide par IA à partir de prompts',
@@ -493,7 +581,12 @@ export const afternoonSlides = [
       company: 'Mistral AI',
       year: '2023',
       url: 'https://chat.mistral.ai/',
-      image: '/src/sessions/day1-afternoon/images/mistral_ai_illustration_1.webp',
+      image: mistralImage1,
+      images: [
+        { src: mistralImage1, size: 'large' },
+        { src: mistralImage2, size: 'medium' },
+        { src: mistralImage3, size: 'small' }
+      ],
       description: 'Mistral AI est une entreprise française spécialisée dans les modèles de langage open-source. Reconnue pour ses modèles performants et efficaces, elle rend l\'IA de pointe accessible avec transparence et flexibilité.',
       keyFeatures: [
         'Modèles open-source librement utilisables',
@@ -523,7 +616,12 @@ export const afternoonSlides = [
       company: 'xAI (Elon Musk)',
       year: '2024',
       url: 'https://grok.x.ai/',
-      image: '/src/sessions/day1-afternoon/images/grok_2_illustration_1.jpg',
+      image: grokImage1,
+      images: [
+        { src: grokImage1, size: 'large' },
+        { src: grokImage2, size: 'medium' },
+        { src: grokImage3, size: 'small' }
+      ],
       description: 'Grok 2 est un modèle de langage développé par xAI, conçu pour être humoristique et rebelle avec une personnalité distincte. Il offre des capacités de raisonnement améliorées et un accès en temps réel à l\'information.',
       keyFeatures: [
         'Personnalité unique et ton irrévérencieux',

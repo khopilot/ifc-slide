@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import './ToolShowcaseSlide.css';
 
 const ToolShowcaseSlide = ({ slide }) => {
-  const { name, description, keyFeatures, useCases, year, image, url } = slide.tool;
+  const { name, description, keyFeatures, useCases, year, image, images, url } = slide.tool;
 
   return (
     <div className="tool-showcase-v2">
@@ -39,6 +39,28 @@ const ToolShowcaseSlide = ({ slide }) => {
               </a>
             )}
           </div>
+
+          {/* Image Gallery - 2 small images */}
+          {images && images.length >= 2 && (
+            <div className="image-gallery-left">
+              <motion.img 
+                src={images[1].src} 
+                alt={`${name} 2`}
+                className="gallery-image-small-left"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+              />
+              <motion.img 
+                src={images[2].src} 
+                alt={`${name} 3`}
+                className="gallery-image-small-left"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+              />
+            </div>
+          )}
         </motion.div>
 
         {/* Right side - Features & Use cases */}
