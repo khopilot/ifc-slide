@@ -108,9 +108,11 @@ const WorkflowSlide = ({ slide }) => {
       >
         <h1 className="main-title">{slide.title}</h1>
         <p className="subtitle">{slide.subtitle}</p>
-        <div className="example-badge">
-          Exemple : {slide.content.example}
-        </div>
+        {slide.content?.example && (
+          <div className="example-badge">
+            Exemple : {slide.content.example}
+          </div>
+        )}
       </motion.div>
 
       <motion.div 
@@ -222,15 +224,30 @@ const WorkflowSlide = ({ slide }) => {
   );
 
   const renderSlideContent = () => {
-    switch (slide.type) {
-      case 'workflow-presentation':
-        return renderWorkflowPresentation();
-      case 'workflow-intro':
-        return renderWorkflowIntro();
-      case 'workflow-detail':
-        return renderWorkflowDetail();
-      default:
-        return <div>Type de slide non reconnu</div>;
+    try {
+      switch (slide.type) {
+        case 'workflow-presentation':
+          return renderWorkflowPresentation();
+        case 'workflow-intro':
+          return renderWorkflowIntro();
+        case 'workflow-detail':
+          return renderWorkflowDetail();
+        default:
+          return (
+            <div className="error-message">
+              <h2>Type de slide non reconnu : {slide.type}</h2>
+              <p>Contenu de la slide : {JSON.stringify(slide, null, 2)}</p>
+            </div>
+          );
+      }
+    } catch (error) {
+      return (
+        <div className="error-message">
+          <h2>Erreur d'affichage</h2>
+          <p>Erreur : {error.message}</p>
+          <p>Type de slide : {slide.type}</p>
+        </div>
+      );
     }
   };
 

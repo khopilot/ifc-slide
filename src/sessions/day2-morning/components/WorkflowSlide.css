@@ -276,8 +276,9 @@
   gap: 0.75rem;
   max-width: 1200px;
   margin: 0 auto;
-  max-height: 60vh;
+  max-height: 65vh;
   overflow-y: auto;
+  padding-right: 0.5rem;
 }
 
 .workflow-step-card {
@@ -363,17 +364,20 @@
 /* Phases container */
 .phases-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1.5rem;
   max-width: 1200px;
   margin: 0 auto;
+  max-height: 65vh;
+  overflow-y: auto;
 }
 
 .phase-section {
   background: white;
-  border-radius: 20px;
-  padding: 2rem;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  height: fit-content;
 }
 
 .phase-title {
@@ -388,13 +392,13 @@
 .phase-steps {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .phase-step {
   background: #f8fafc;
-  border-radius: 12px;
-  padding: 1.25rem;
+  border-radius: 10px;
+  padding: 1rem;
   border-left: 4px solid #3b82f6;
 }
 
@@ -429,18 +433,21 @@
 /* Workflows grid */
 .workflows-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
   max-width: 1200px;
   margin: 0 auto;
+  max-height: 65vh;
+  overflow-y: auto;
 }
 
 .workflow-card {
   background: white;
-  border-radius: 16px;
-  padding: 1.5rem;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+  height: fit-content;
 }
 
 .workflow-card:hover {
@@ -599,6 +606,14 @@
   
   .phases-container {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
+    max-height: 70vh;
+  }
+  
+  .workflows-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    max-height: 70vh;
   }
 }
 
@@ -639,6 +654,32 @@
   .time-arrow {
     transform: rotate(90deg);
   }
+}
+
+/* Error message */
+.error-message {
+  background: #fee2e2;
+  border: 2px solid #ef4444;
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  color: #991b1b;
+}
+
+.error-message h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+}
+
+.error-message p {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+  font-family: monospace;
+  background: #fef2f2;
+  padding: 0.5rem;
+  border-radius: 8px;
+  word-break: break-all;
 }
 
 /* Dark mode */

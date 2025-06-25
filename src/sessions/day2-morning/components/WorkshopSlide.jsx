@@ -39,7 +39,7 @@ const WorkshopSlide = ({ slide }) => {
           <p className="workshop-subtitle">{slide.subtitle}</p>
         </motion.div>
 
-        {slide.type === 'practical-workshop' && (
+        {slide.type === 'practical-workshop' && slide.content && (
           <motion.div className="workshop-body" variants={itemVariants}>
             <div className="workshop-objective">
               <h3>🎯 Objectif</h3>
@@ -92,7 +92,7 @@ const WorkshopSlide = ({ slide }) => {
           </motion.div>
         )}
 
-        {slide.type === 'group-presentations' && (
+        {slide.type === 'group-presentations' && slide.content && (
           <motion.div className="presentations-body" variants={itemVariants}>
             <div className="presentation-format">
               <h3>📊 Format</h3>
@@ -117,7 +117,7 @@ const WorkshopSlide = ({ slide }) => {
           </motion.div>
         )}
 
-        {slide.type === 'conclusion' && (
+        {slide.type === 'conclusion' && slide.content && (
           <motion.div className="conclusion-body" variants={itemVariants}>
             <div className="conclusion-grid">
               <div className="achievements-section">
