@@ -17,6 +17,7 @@
   overflow: hidden;
   position: relative;
   box-sizing: border-box;
+  container-type: inline-size;
 }
 
 /* Background pattern */
@@ -35,9 +36,11 @@
 
 /* Header */
 .it-workspace-slide .slide-header {
-  margin: 1.5rem 1.5rem 1.5rem 1.5rem;
+  padding: 1.5rem 1.5rem 0;
+  margin-bottom: 1rem;
   position: relative;
   z-index: 1;
+  flex-shrink: 0;
 }
 
 .it-workspace-slide .slide-title {
@@ -58,6 +61,8 @@
   padding: 0.5rem;
   border-radius: 1rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  max-width: 100%;
+  overflow-x: auto;
 }
 
 .it-workspace-slide .tab-button {
@@ -90,12 +95,13 @@
 .it-workspace-slide .slide-content {
   flex: 1;
   overflow-y: auto;
-  padding: 0 1.5rem 1.5rem 1.5rem;
+  padding: 0 1.5rem 1.5rem;
   position: relative;
   z-index: 1;
-  max-height: calc(100vh - 180px);
+  min-height: 0;
   width: 100%;
-  box-sizing: border-box;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 /* Overview Tab */
