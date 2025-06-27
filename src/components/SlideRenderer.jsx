@@ -31,6 +31,12 @@ import MetaWorkflowSlide from '../sessions/day2-morning/components/MetaWorkflowS
 import TeamFormationSlide from '../sessions/day2-morning/components/TeamFormationSlide';
 import LunchSlide from '../sessions/day2-morning/components/LunchSlide';
 
+// Day 2 Afternoon components
+import ProjectWorkshopSlide from '../sessions/day2-afternoon/components/ProjectWorkshopSlide';
+import PresentationsSlide from '../sessions/day2-afternoon/components/PresentationsSlide';
+import QASessionSlide from '../sessions/day2-afternoon/components/QASessionSlide';
+import ConclusionSlide from '../sessions/day2-afternoon/components/ConclusionSlide';
+
 const slideComponents = {
   title: TitleSlide,
   timeline: TimelineSlide,
@@ -62,6 +68,11 @@ const slideComponents = {
   'practical-workshop': WorkshopSlide,
   'group-presentations': WorkshopSlide,
   'conclusion': WorkshopSlide,
+  // Day 2 Afternoon components
+  'project-workshop': ProjectWorkshopSlide,
+  'presentations': PresentationsSlide,
+  'qa-session': QASessionSlide,
+  'conclusion': ConclusionSlide,
   // Fallback component for any missing slide types
   default: PresentationSlide
 };
@@ -79,7 +90,11 @@ const SlideRenderer = ({ slide, tools }) => {
     'cdl-recruitment',
     'meta-workflow',
     'lunch',
-    'team-formation'
+    'team-formation',
+    'project-workshop',
+    'presentations',
+    'qa-session',
+    'conclusion'
   ];
   
   const isFullWidth = fullWidthSlides.includes(slide.type);

@@ -19,11 +19,11 @@ const SlideNavigator = ({ slides, currentSlide, onSelectSlide, onClose }) => {
 
   // Configuration simple et claire des sessions
   const sessionConfig = {
-    'intro': { start: 0, end: 0 },      // 1 slide
-    'day1-morning': { start: 1, end: 33 },   // 33 slides
-    'day1-afternoon': { start: 34, end: 56 }, // 23 slides
-    'day2-morning': { start: 57, end: 69 },   // 13 slides
-    'day2-afternoon': { start: 70, end: 71 }  // 2 slides
+    'intro': { start: 0, end: 0 },           // 1 slide
+    'day1-morning': { start: 1, end: 29 },    // 29 slides
+    'day1-afternoon': { start: 30, end: 53 }, // 24 slides
+    'day2-morning': { start: 54, end: 66 },   // 13 slides
+    'day2-afternoon': { start: 67, end: 72 }  // 6 slides
   };
 
   // Organiser les slides par session

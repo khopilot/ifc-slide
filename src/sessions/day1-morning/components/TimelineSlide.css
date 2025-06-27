@@ -207,8 +207,8 @@
 
 /* Event description - amélioré pour lisibilité */
 .event-description {
-  font-size: 1.4rem;
-  line-height: 1.7;
+  font-size: 1.7rem;
+  line-height: 1.8;
   color: #374151;
   margin: 0 0 2.5rem 0;
   max-width: 95%;
@@ -236,7 +236,7 @@
 }
 
 .significance {
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   line-height: 1.7;
   color: #1e40af;
   margin: 0;
